@@ -1,0 +1,1182 @@
+[
+  {
+    "query_id": "Q01",
+    "category": "current_state",
+    "query": "What is the current daily meal allowance for business travel?",
+    "naive_scores": {
+      "temporal_accuracy": 5,
+      "contradiction_handling": 1,
+      "citation_quality": 1
+    },
+    "chrono_scores": {
+      "temporal_accuracy": 5,
+      "contradiction_handling": 5,
+      "citation_quality": 5
+    },
+    "naive_total": 7,
+    "chrono_total": 15,
+    "naive_time": 1.23,
+    "chrono_time": 2.95,
+    "expected_behavior": "Must answer $100/day citing the 2026 travel policy. Must NOT present the outdated $50/day figure from the 2022 memo as current. Ideally notes the 2022 policy was superseded.",
+    "naive_answer": "The current daily meal allowance for business travel is $100.00, and receipts are required only for individual meal expenses exceeding $25.",
+    "chrono_answer": "According to the current corporate travel policy, as outlined in [LOCAL-travel_policy_2026.md-chunk-1 - 2026-07-23], the daily meal allowance for business travel is $100.00 USD. This allowance overrides the previous $50 cap stated in the 2022 travel expense guidelines, as noted in the conflict audit log. The new policy, effective July 23, 2026, supersedes all previous travel memorandums, including the 2022 travel expense guidelines, as stated in [LOCAL-travel_policy_2026.md-chunk-0 - 2026-07-23]. Receipts are required for meal expenses over $25.",
+    "naive_judge_reasoning": "The answer achieves a perfect temporal accuracy score because it correctly identifies the current daily meal allowance as $100, which aligns with the expected behavior of citing the 2026 travel policy. However, it fails in contradiction handling as it does not mention the outdated $50/day figure from the 2022 memo or note its supersession. Additionally, the citation quality is the lowest because it does not provide any source or document reference for the $100/day figure.",
+    "chrono_judge_reasoning": "The answer perfectly reflects the current time period by citing the 2026 travel policy and explicitly states it supersedes the 2022 travel expense guidelines. It clearly identifies the superseded document and resolves the conflict by explaining the new policy's effective date. Specific document names and chunk IDs are provided, demonstrating high citation quality.",
+    "naive_chunks": [
+      {
+        "id": "LOCAL-travel_memo_2022.md-chunk-0",
+        "metadata": {
+          "title": "Travel Expense Guidelines 2022",
+          "doc_type": "unstructured_text",
+          "effective_date": "2022-05-01",
+          "source": "local_file"
+        }
+      },
+      {
+        "id": "LOCAL-travel_policy_2026.md-chunk-1",
+        "metadata": {
+          "source": "local_file",
+          "doc_type": "structured_table",
+          "title": "Travel Policy 2026",
+          "effective_date": "2026-07-23"
+        }
+      },
+      {
+        "id": "LOCAL-travel_policy_2026.md-chunk-0",
+        "metadata": {
+          "effective_date": "2026-07-23",
+          "doc_type": "structured_table",
+          "title": "Travel Policy 2026",
+          "source": "local_file"
+        }
+      },
+      {
+        "id": "LOCAL-travel_policy_2026.md-chunk-2",
+        "metadata": {
+          "doc_type": "structured_table",
+          "title": "Travel Policy 2026",
+          "effective_date": "2026-07-23",
+          "source": "local_file"
+        }
+      },
+      {
+        "id": "LOCAL-remote_work_policy_2025.md-chunk-0",
+        "metadata": {
+          "doc_type": "structured_table",
+          "source": "local_file",
+          "effective_date": "2025-01-10",
+          "title": "Remote Work Policy 2025 Update"
+        }
+      }
+    ],
+    "chrono_chunks": [
+      {
+        "id": "LOCAL-travel_memo_2022.md-chunk-0",
+        "metadata": {
+          "effective_date": "2022-05-01",
+          "doc_type": "unstructured_text",
+          "source": "local_file",
+          "title": "Travel Expense Guidelines 2022"
+        }
+      },
+      {
+        "id": "LOCAL-travel_policy_2026.md-chunk-0",
+        "metadata": {
+          "title": "Travel Policy 2026",
+          "effective_date": "2026-07-23",
+          "doc_type": "structured_table",
+          "source": "local_file"
+        }
+      },
+      {
+        "id": "LOCAL-travel_policy_2026.md-chunk-1",
+        "metadata": {
+          "title": "Travel Policy 2026",
+          "effective_date": "2026-07-23",
+          "doc_type": "structured_table",
+          "source": "local_file"
+        }
+      },
+      {
+        "id": "LOCAL-travel_policy_2026.md-chunk-2",
+        "metadata": {
+          "source": "local_file",
+          "title": "Travel Policy 2026",
+          "doc_type": "structured_table",
+          "effective_date": "2026-07-23"
+        }
+      },
+      {
+        "id": "LOCAL-travel_policy_2026.md-chunk-3",
+        "metadata": {
+          "title": "Travel Policy 2026",
+          "doc_type": "structured_table",
+          "effective_date": "2026-07-23",
+          "source": "local_file"
+        }
+      }
+    ]
+  },
+  {
+    "query_id": "Q02",
+    "category": "historical",
+    "query": "What was the remote work policy back in 2022?",
+    "naive_scores": {
+      "temporal_accuracy": 5,
+      "contradiction_handling": 5,
+      "citation_quality": 3
+    },
+    "chrono_scores": {
+      "temporal_accuracy": 5,
+      "contradiction_handling": 5,
+      "citation_quality": 5
+    },
+    "naive_total": 13,
+    "chrono_total": 15,
+    "naive_time": 0.84,
+    "chrono_time": 2.88,
+    "expected_behavior": "Must describe the 2022 policy: 2 remote days/week, no equipment stipend, core hours 9-5, VPN required. Must NOT dismiss the 2022 document as outdated — the user explicitly asked for historical info.",
+    "naive_answer": "According to the provided context, the remote work policy in 2022 was as follows:\n\n- All full-time employees were permitted to work remotely up to 2 days per week.\n- Employees must be physically present at the office for at least 3 days per week.\n- Remote work requests must be approved by the direct manager at least one week in advance.\n- No equipment stipend was provided for home offices.\n- Employees working remotely were expected to be available during core hours (9 AM – 5 PM local time).\n- VPN access was mandatory for all remote sessions.",
+    "chrono_answer": "According to the historical document [LOCAL-remote_work_policy_2022.md-chunk-0](https://localhost/LOCAL-remote_work_policy_2022.md-chunk-0), effective March 15, 2022, the company's remote work policy was as follows:\n\n* All full-time employees were permitted to work remotely up to 2 days per week.\n* Employees were required to be physically present at the office for at least 3 days per week.\n* Remote work requests had to be approved by the direct manager at least one week in advance.\n* No equipment stipend was provided for home offices.\n* Employees working remotely were expected to be available during core hours (9 AM – 5 PM local time).\n* VPN access was mandatory for all remote sessions.\n\nPlease note that this policy has since been updated, as indicated by the [LOCAL-remote_work_policy_2025.md-chunk-0](https://localhost/LOCAL-remote_work_policy_2025.md-chunk-0) document, which supersedes the 2022 guidelines. However, the above description reflects the policy as it was in effect in 2022.",
+    "naive_judge_reasoning": "The answer perfectly reflects the 2022 time period without mixing it with other time periods or presenting outdated facts as current, thereby achieving a score of 5 for temporal accuracy. It also handles potential contradictions by sticking to the 2022 policy without mentioning or conflicting with current or other policies, thus earning a score of 5 for contradiction handling. However, the citation quality is only 3 because, although it mentions being based on 'the provided context', it does not provide specific document names, effective dates, or chunk IDs.",
+    "chrono_judge_reasoning": "The answer perfectly reflects the correct time period of 2022 without mixing it with other time periods. It explicitly identifies the superseded document (2025 policy) and explains that the provided description is for the 2022 policy, resolving the conflict. The answer also cites specific document names and chunk IDs, demonstrating high quality citations.",
+    "naive_chunks": [
+      {
+        "id": "LOCAL-remote_work_policy_2025.md-chunk-0",
+        "metadata": {
+          "doc_type": "structured_table",
+          "effective_date": "2025-01-10",
+          "title": "Remote Work Policy 2025 Update",
+          "source": "local_file"
+        }
+      },
+      {
+        "id": "LOCAL-remote_work_policy_2022.md-chunk-0",
+        "metadata": {
+          "doc_type": "unstructured_text",
+          "effective_date": "2022-03-15",
+          "source": "local_file",
+          "title": "Remote Work Policy 2022"
+        }
+      },
+      {
+        "id": "LOCAL-data_retention_2025.md-chunk-2",
+        "metadata": {
+          "effective_date": "2025-05-01",
+          "source": "local_file",
+          "title": "Data Retention Policy 2025 – GDPR Aligned",
+          "doc_type": "structured_table"
+        }
+      },
+      {
+        "id": "LOCAL-data_retention_2025.md-chunk-0",
+        "metadata": {
+          "title": "Data Retention Policy 2025 – GDPR Aligned",
+          "source": "local_file",
+          "effective_date": "2025-05-01",
+          "doc_type": "structured_table"
+        }
+      },
+      {
+        "id": "LOCAL-hiring_freeze_2023.md-chunk-0",
+        "metadata": {
+          "source": "local_file",
+          "effective_date": "2023-07-01",
+          "title": "Hiring Freeze Notice Q3 2023",
+          "doc_type": "unstructured_text"
+        }
+      }
+    ],
+    "chrono_chunks": [
+      {
+        "id": "LOCAL-remote_work_policy_2025.md-chunk-0",
+        "metadata": {
+          "source": "local_file",
+          "title": "Remote Work Policy 2025 Update",
+          "doc_type": "structured_table",
+          "effective_date": "2025-01-10"
+        }
+      },
+      {
+        "id": "LOCAL-remote_work_policy_2022.md-chunk-0",
+        "metadata": {
+          "source": "local_file",
+          "title": "Remote Work Policy 2022",
+          "effective_date": "2022-03-15",
+          "doc_type": "unstructured_text"
+        }
+      },
+      {
+        "id": "LOCAL-data_retention_2025.md-chunk-0",
+        "metadata": {
+          "title": "Data Retention Policy 2025 – GDPR Aligned",
+          "source": "local_file",
+          "doc_type": "structured_table",
+          "effective_date": "2025-05-01"
+        }
+      },
+      {
+        "id": "LOCAL-travel_policy_2026.md-chunk-0",
+        "metadata": {
+          "title": "Travel Policy 2026",
+          "doc_type": "structured_table",
+          "effective_date": "2026-07-23",
+          "source": "local_file"
+        }
+      },
+      {
+        "id": "LOCAL-hiring_resume_2024.md-chunk-0",
+        "metadata": {
+          "title": "Hiring Resumed – Q1 2024",
+          "source": "local_file",
+          "effective_date": "2024-02-01",
+          "doc_type": "unstructured_text"
+        }
+      }
+    ]
+  },
+  {
+    "query_id": "Q03",
+    "category": "timeline",
+    "query": "How have the company's salary bands for engineers changed over time?",
+    "naive_scores": {
+      "temporal_accuracy": 5,
+      "contradiction_handling": 5,
+      "citation_quality": 1
+    },
+    "chrono_scores": {
+      "temporal_accuracy": 5,
+      "contradiction_handling": 5,
+      "citation_quality": 5
+    },
+    "naive_total": 11,
+    "chrono_total": 15,
+    "naive_time": 1.21,
+    "chrono_time": 3.79,
+    "expected_behavior": "Must present a chronological comparison: 2023 bands ($85k entry, $110-130k mid, $140-170k senior, 10% bonus, stock options) vs. 2026 bands ($105-120k entry, $130-155k mid, $160-200k senior, 12-25% bonus, RSUs). Should note key changes like RSU replacement and vesting schedule update.",
+    "naive_answer": "The company's salary bands for engineers have changed over time. \n\nAs of April 2023, the base salary for entry-level software engineers was $85,000 per year, mid-level engineers earned between $110,000 and $130,000, and senior engineers were compensated in the range of $140,000 to $170,000.\n\nHowever, with the 2026 revision, the salary bands have increased. The entry-level base salary has increased to a range of $105,000 - $120,000, mid-level engineers now earn between $130,000 - $155,000, senior engineers earn between $160,000 - $200,000, and staff engineers earn between $200,000 - $250,000. \n\nAdditionally, bonus targets have increased across all levels, and RSU grants have been introduced, replacing stock options only. The vesting period has also changed from 4-year cliff schedule to 3-year monthly vesting. \n\nTherefore, the company's salary bands for engineers have seen significant increases and changes in bonus structures and equity grants over time.",
+    "chrono_answer": "To understand the evolution of the company's salary bands for engineers over time, let's examine the changes chronologically:\n\n1. **As of April 1, 2023 (LOCAL-salary_bands_2023.md-chunk-0)**: The company had standardized salary bands with the following details:\n   - Entry-level software engineers were paid a base salary of $85,000 per year.\n   - Mid-level engineers earned between $110,000 and $130,000.\n   - Senior engineers were compensated in the range of $140,000 to $170,000.\n   - The annual bonus target was 10% of the base salary for all engineering roles.\n   - Stock options vested over a 4-year cliff schedule with a 1-year cliff.\n\n2. **Between April 1, 2023, and January 15, 2026**: A company-wide hiring freeze was implemented on July 1, 2023 (LOCAL-hiring_freeze_2023.md-chunk-0), affecting all departments, but this did not directly alter the salary bands. The freeze was expected to last through Q4 2023, pending an economic review.\n\n3. **As of January 15, 2026 (LOCAL-salary_bands_2026.md-chunk-0)**: Significant changes were made to the compensation framework:\n   - The entry-level base salary was increased from $85,000 to a range of $105,000 – $120,000.\n   - Mid-level engineers now earn between $130,000 and $155,000.\n   - Senior engineers are compensated in the range of $160,000 to $200,000.\n   - Staff Engineer positions were added with a salary range of $200,000 – $250,000.\n   - Annual bonus targets increased across all levels (12% for L3, 15% for L4, 20% for L5, and 25% for L6).\n   - RSU (Restricted Stock Unit) grants were introduced, replacing stock options, with varying grant amounts per level ($20,000/yr for L3, $40,000/yr for L4, $75,000/yr for L5, and $120,000/yr for L6).\n   - The vesting schedule changed from a 4-year cliff to a 3-year monthly vesting schedule.\n\nIn summary, between 2023 and 2026, the company increased base salaries, introduced new positions, enhanced bonus structures, shifted from stock options to RSU grants, and adjusted the vesting schedule. These changes reflect the evolution of the company's compensation strategy to better attract, retain, and incentivize engineering talent. The most recent updates were implemented as of January 15, 2026, as outlined in the 2026 compensation review document.",
+    "naive_judge_reasoning": "The answer is scored as follows: Temporal Accuracy (5) as it correctly compares 2023 and 2026 salary bands without mixing time periods. Contradiction Handling (5) because it clearly presents the changes over time, effectively resolving any potential conflicts between the two time periods. Citation Quality (1) since there are no citations or source attributions provided in the answer.",
+    "chrono_judge_reasoning": "The answer accurately reflects the correct time periods, clearly presenting the changes in the company's salary bands from 2023 to 2026. It explicitly identifies the source documents and their dates (e.g., LOCAL-salary_bands_2023.md-chunk-0 and LOCAL-salary_bands_2026.md-chunk-0), effectively resolving any potential conflicts between the different time periods. Furthermore, it provides detailed citations for each point, including specific document names and dates.",
+    "naive_chunks": [
+      {
+        "id": "LOCAL-salary_bands_2026.md-chunk-0",
+        "metadata": {
+          "title": "Salary Bands 2026 Revision",
+          "effective_date": "2026-01-15",
+          "source": "local_file",
+          "doc_type": "structured_table"
+        }
+      },
+      {
+        "id": "LOCAL-salary_bands_2023.md-chunk-0",
+        "metadata": {
+          "doc_type": "unstructured_text",
+          "source": "local_file",
+          "effective_date": "2023-04-01",
+          "title": "Salary Bands 2023"
+        }
+      },
+      {
+        "id": "LOCAL-remote_work_policy_2025.md-chunk-0",
+        "metadata": {
+          "doc_type": "structured_table",
+          "effective_date": "2025-01-10",
+          "title": "Remote Work Policy 2025 Update",
+          "source": "local_file"
+        }
+      },
+      {
+        "id": "LOCAL-hiring_freeze_2023.md-chunk-0",
+        "metadata": {
+          "doc_type": "unstructured_text",
+          "source": "local_file",
+          "title": "Hiring Freeze Notice Q3 2023",
+          "effective_date": "2023-07-01"
+        }
+      },
+      {
+        "id": "LOCAL-hiring_resume_2024.md-chunk-0",
+        "metadata": {
+          "title": "Hiring Resumed – Q1 2024",
+          "source": "local_file",
+          "effective_date": "2024-02-01",
+          "doc_type": "unstructured_text"
+        }
+      }
+    ],
+    "chrono_chunks": [
+      {
+        "id": "LOCAL-salary_bands_2026.md-chunk-0",
+        "metadata": {
+          "doc_type": "structured_table",
+          "source": "local_file",
+          "effective_date": "2026-01-15",
+          "title": "Salary Bands 2026 Revision"
+        }
+      },
+      {
+        "id": "LOCAL-salary_bands_2023.md-chunk-0",
+        "metadata": {
+          "source": "local_file",
+          "title": "Salary Bands 2023",
+          "doc_type": "unstructured_text",
+          "effective_date": "2023-04-01"
+        }
+      },
+      {
+        "id": "LOCAL-hiring_freeze_2023.md-chunk-0",
+        "metadata": {
+          "effective_date": "2023-07-01",
+          "doc_type": "unstructured_text",
+          "source": "local_file",
+          "title": "Hiring Freeze Notice Q3 2023"
+        }
+      },
+      {
+        "id": "LOCAL-travel_policy_2026.md-chunk-0",
+        "metadata": {
+          "effective_date": "2026-07-23",
+          "doc_type": "structured_table",
+          "title": "Travel Policy 2026",
+          "source": "local_file"
+        }
+      },
+      {
+        "id": "LOCAL-travel_policy_2026.md-chunk-1",
+        "metadata": {
+          "source": "local_file",
+          "doc_type": "structured_table",
+          "title": "Travel Policy 2026",
+          "effective_date": "2026-07-23"
+        }
+      }
+    ]
+  },
+  {
+    "query_id": "Q04",
+    "category": "current_state",
+    "query": "Is cloud storage permitted for customer PII?",
+    "naive_scores": {
+      "temporal_accuracy": 5,
+      "contradiction_handling": 4,
+      "citation_quality": 4
+    },
+    "chrono_scores": {
+      "temporal_accuracy": 5,
+      "contradiction_handling": 5,
+      "citation_quality": 5
+    },
+    "naive_total": 13,
+    "chrono_total": 15,
+    "naive_time": 0.89,
+    "chrono_time": 15.16,
+    "expected_behavior": "Must answer YES, citing the 2025 GDPR-aligned policy (cloud with AES-256 encryption). Must flag the contradiction with the 2021 policy that prohibited cloud storage. Should note the 2025 policy explicitly supersedes 2021.",
+    "naive_answer": "Yes, cloud storage is permitted for customer PII, as long as it is encrypted. According to the 2025 policy, customer PII can be stored in the cloud with AES-256 mandatory encryption. This is a change from the 2021 policy, which prohibited cloud storage for customer PII.",
+    "chrono_answer": "According to the latest policy, cloud storage is permitted for customer PII. This is stated in [LOCAL-data_retention_2025.md-chunk-1 - 2025-05-01] under the Retention Schedule table, where it specifies that customer PII can be stored in the cloud with AES-256 mandatory encryption. \n\nThis policy supersedes the previous prohibition on cloud storage, as noted in [LOCAL-data_retention_2025.md-chunk-2 - 2025-05-01], which mentions that cloud storage was previously prohibited but is now permitted. The Conflict Audit Log also confirms that the older policy (LOCAL-data_retention_2021.md-chunk-0) has been invalidated by the newer policy due to its newer effective date and explicit override of cloud storage policy for customer PII.\n\nTherefore, as of the current policy (effective 2025-05-01), cloud storage is allowed for customer PII, provided it meets the specified encryption requirements.",
+    "naive_judge_reasoning": "The answer accurately reflects the current time period by mentioning the 2025 policy. It also correctly identifies the change from the 2021 policy, which is a form of contradiction handling. However, it does not explicitly state that the 2025 policy supersedes the 2021 policy, which is why contradiction handling is not a perfect score. Citation quality is good but not perfect because it mentions the '2025 policy' without further specifics like a document ID or title.",
+    "chrono_judge_reasoning": "The answer accurately reflects the correct time period by citing the 2025 policy, explicitly handles the contradiction with the 2021 policy by noting supersession, and provides specific citations including document names and effective dates.",
+    "naive_chunks": [
+      {
+        "id": "LOCAL-data_retention_2025.md-chunk-2",
+        "metadata": {
+          "effective_date": "2025-05-01",
+          "doc_type": "structured_table",
+          "source": "local_file",
+          "title": "Data Retention Policy 2025 – GDPR Aligned"
+        }
+      },
+      {
+        "id": "LOCAL-data_retention_2021.md-chunk-0",
+        "metadata": {
+          "doc_type": "unstructured_text",
+          "title": "Data Retention Policy 2021",
+          "effective_date": "2021-06-01",
+          "source": "local_file"
+        }
+      },
+      {
+        "id": "LOCAL-data_retention_2025.md-chunk-1",
+        "metadata": {
+          "doc_type": "structured_table",
+          "title": "Data Retention Policy 2025 – GDPR Aligned",
+          "effective_date": "2025-05-01",
+          "source": "local_file"
+        }
+      },
+      {
+        "id": "LOCAL-travel_policy_2026.md-chunk-3",
+        "metadata": {
+          "effective_date": "2026-07-23",
+          "doc_type": "structured_table",
+          "title": "Travel Policy 2026",
+          "source": "local_file"
+        }
+      },
+      {
+        "id": "LOCAL-data_retention_2025.md-chunk-0",
+        "metadata": {
+          "source": "local_file",
+          "effective_date": "2025-05-01",
+          "title": "Data Retention Policy 2025 – GDPR Aligned",
+          "doc_type": "structured_table"
+        }
+      }
+    ],
+    "chrono_chunks": [
+      {
+        "id": "LOCAL-data_retention_2025.md-chunk-2",
+        "metadata": {
+          "source": "local_file",
+          "title": "Data Retention Policy 2025 – GDPR Aligned",
+          "doc_type": "structured_table",
+          "effective_date": "2025-05-01"
+        }
+      },
+      {
+        "id": "LOCAL-data_retention_2021.md-chunk-0",
+        "metadata": {
+          "doc_type": "unstructured_text",
+          "title": "Data Retention Policy 2021",
+          "source": "local_file",
+          "effective_date": "2021-06-01"
+        }
+      },
+      {
+        "id": "LOCAL-data_retention_2025.md-chunk-1",
+        "metadata": {
+          "source": "local_file",
+          "effective_date": "2025-05-01",
+          "doc_type": "structured_table",
+          "title": "Data Retention Policy 2025 – GDPR Aligned"
+        }
+      },
+      {
+        "id": "LOCAL-travel_policy_2026.md-chunk-3",
+        "metadata": {
+          "source": "local_file",
+          "title": "Travel Policy 2026",
+          "effective_date": "2026-07-23",
+          "doc_type": "structured_table"
+        }
+      },
+      {
+        "id": "LOCAL-hiring_freeze_2023.md-chunk-0",
+        "metadata": {
+          "effective_date": "2023-07-01",
+          "source": "local_file",
+          "title": "Hiring Freeze Notice Q3 2023",
+          "doc_type": "unstructured_text"
+        }
+      }
+    ]
+  },
+  {
+    "query_id": "Q05",
+    "category": "current_state",
+    "query": "Is the company currently under a hiring freeze?",
+    "naive_scores": {
+      "temporal_accuracy": 5,
+      "contradiction_handling": 4,
+      "citation_quality": 3
+    },
+    "chrono_scores": {
+      "temporal_accuracy": 5,
+      "contradiction_handling": 5,
+      "citation_quality": 5
+    },
+    "naive_total": 12,
+    "chrono_total": 15,
+    "naive_time": 0.79,
+    "chrono_time": 14.73,
+    "expected_behavior": "Must answer NO — the freeze was lifted in Feb 2024. Must NOT say the company is frozen (the 2023 freeze doc is outdated). Should cite both the 2023 freeze and the 2024 lift to show awareness.",
+    "naive_answer": "No, the company is not currently under a hiring freeze. According to the context, the company-wide hiring freeze was lifted effective February 1, 2024.",
+    "chrono_answer": "According to the latest information available, the company is no longer under a hiring freeze. As stated in [LOCAL-hiring_resume_2024.md-chunk-0], effective February 1, 2024, the company-wide hiring freeze initiated in July 2023 has been officially lifted (2024-02-01). This supersedes the older hiring freeze policy, which has been invalidated as per the Conflict Audit Log. \n\nThe lifting of the hiring freeze allows all departments to resume normal recruitment activity, with new requisitions requiring Director-level approval and a revised headcount plan in place, prioritizing areas such as Engineering, Data Science, and Compliance [LOCAL-hiring_resume_2024.md-chunk-0].",
+    "naive_judge_reasoning": "The answer reflects the correct current state by stating the hiring freeze was lifted in February 2024, achieving perfect temporal accuracy. It handles contradiction by acknowledging the previous freeze and its lift, but does not explicitly identify the superseded document, thus not achieving a perfect contradiction handling score. The citation quality is partial as it references 'the context' without specifying the document names or IDs.",
+    "chrono_judge_reasoning": "The answer perfectly reflects the correct time period by stating the hiring freeze was lifted in February 2024, thus showing awareness of the current state. It explicitly identifies the superseded document (2023 freeze) and explains the conflict resolution by mentioning the lifting of the freeze. The answer provides high-quality citations by referencing specific document names and effective dates.",
+    "naive_chunks": [
+      {
+        "id": "LOCAL-hiring_resume_2024.md-chunk-0",
+        "metadata": {
+          "title": "Hiring Resumed – Q1 2024",
+          "doc_type": "unstructured_text",
+          "effective_date": "2024-02-01",
+          "source": "local_file"
+        }
+      },
+      {
+        "id": "LOCAL-hiring_freeze_2023.md-chunk-0",
+        "metadata": {
+          "doc_type": "unstructured_text",
+          "source": "local_file",
+          "title": "Hiring Freeze Notice Q3 2023",
+          "effective_date": "2023-07-01"
+        }
+      },
+      {
+        "id": "TLAMA-424",
+        "metadata": {
+          "doc_type": "structured_table",
+          "title": "TempLAMA-Eiji Kawashima plays",
+          "source": "templama",
+          "effective_date": "2020-01-01"
+        }
+      },
+      {
+        "id": "TLAMA-422",
+        "metadata": {
+          "source": "templama",
+          "effective_date": "2018-01-01",
+          "title": "TempLAMA-Eiji Kawashima plays",
+          "doc_type": "structured_table"
+        }
+      },
+      {
+        "id": "TLAMA-423",
+        "metadata": {
+          "title": "TempLAMA-Eiji Kawashima plays",
+          "doc_type": "structured_table",
+          "effective_date": "2019-01-01",
+          "source": "templama"
+        }
+      }
+    ],
+    "chrono_chunks": [
+      {
+        "id": "LOCAL-hiring_freeze_2023.md-chunk-0",
+        "metadata": {
+          "source": "local_file",
+          "title": "Hiring Freeze Notice Q3 2023",
+          "doc_type": "unstructured_text",
+          "effective_date": "2023-07-01"
+        }
+      },
+      {
+        "id": "LOCAL-hiring_resume_2024.md-chunk-0",
+        "metadata": {
+          "effective_date": "2024-02-01",
+          "doc_type": "unstructured_text",
+          "title": "Hiring Resumed – Q1 2024",
+          "source": "local_file"
+        }
+      },
+      {
+        "id": "LOCAL-data_retention_2021.md-chunk-0",
+        "metadata": {
+          "title": "Data Retention Policy 2021",
+          "source": "local_file",
+          "doc_type": "unstructured_text",
+          "effective_date": "2021-06-01"
+        }
+      },
+      {
+        "id": "LOCAL-salary_bands_2023.md-chunk-0",
+        "metadata": {
+          "source": "local_file",
+          "effective_date": "2023-04-01",
+          "title": "Salary Bands 2023",
+          "doc_type": "unstructured_text"
+        }
+      },
+      {
+        "id": "TLAMA-424",
+        "metadata": {
+          "source": "templama",
+          "doc_type": "structured_table",
+          "title": "TempLAMA-Eiji Kawashima plays",
+          "effective_date": "2020-01-01"
+        }
+      }
+    ]
+  },
+  {
+    "query_id": "Q06",
+    "category": "current_state",
+    "query": "What is the current base salary range for a Senior Engineer?",
+    "naive_scores": {
+      "temporal_accuracy": 5,
+      "contradiction_handling": 5,
+      "citation_quality": 5
+    },
+    "chrono_scores": {
+      "temporal_accuracy": 5,
+      "contradiction_handling": 5,
+      "citation_quality": 5
+    },
+    "naive_total": 15,
+    "chrono_total": 15,
+    "naive_time": 1.7,
+    "chrono_time": 17.23,
+    "expected_behavior": "Must answer $160,000-$200,000 from the 2026 salary bands. Must NOT quote the 2023 figure of $140,000-$170,000 as current. Should cite the 2026 revision document.",
+    "naive_answer": "The current base salary range for a Senior Engineer is $160,000 - $200,000. This information is based on the 2026 Compensation Framework, which supersedes the previous compensation review.",
+    "chrono_answer": "The current base salary range for a Senior Engineer is $160,000 – $200,000. This information is based on the latest compensation framework revision, which is documented in [LOCAL-salary_bands_2026.md-chunk-0] with an effective date of January 15, 2026. This document supersedes the April 2023 compensation review, and according to the Conflict Audit Log, it also invalidates any information from \"LOCAL-salary_bands_2023.md-chunk-0\" due to its newer effective date with updated salary bands.",
+    "naive_judge_reasoning": "The answer perfectly reflects the correct time period by citing the 2026 Compensation Framework. It explicitly identifies that this framework supersedes the previous compensation review, demonstrating excellent temporal accuracy and contradiction handling. The answer also provides a clear citation of the 2026 document, ensuring high-quality sourcing.",
+    "chrono_judge_reasoning": "The answer perfectly reflects the correct time period by citing the 2026 salary bands, explicitly identifies and resolves the contradiction between the 2023 and 2026 documents, and provides high-quality citations with specific document names, effective dates, and chunk IDs.",
+    "naive_chunks": [
+      {
+        "id": "LOCAL-salary_bands_2023.md-chunk-0",
+        "metadata": {
+          "effective_date": "2023-04-01",
+          "doc_type": "unstructured_text",
+          "title": "Salary Bands 2023",
+          "source": "local_file"
+        }
+      },
+      {
+        "id": "LOCAL-salary_bands_2026.md-chunk-0",
+        "metadata": {
+          "source": "local_file",
+          "doc_type": "structured_table",
+          "title": "Salary Bands 2026 Revision",
+          "effective_date": "2026-01-15"
+        }
+      },
+      {
+        "id": "LOCAL-remote_work_policy_2025.md-chunk-0",
+        "metadata": {
+          "source": "local_file",
+          "title": "Remote Work Policy 2025 Update",
+          "doc_type": "structured_table",
+          "effective_date": "2025-01-10"
+        }
+      },
+      {
+        "id": "LOCAL-hiring_freeze_2023.md-chunk-0",
+        "metadata": {
+          "title": "Hiring Freeze Notice Q3 2023",
+          "effective_date": "2023-07-01",
+          "doc_type": "unstructured_text",
+          "source": "local_file"
+        }
+      },
+      {
+        "id": "LOCAL-hiring_resume_2024.md-chunk-0",
+        "metadata": {
+          "doc_type": "unstructured_text",
+          "effective_date": "2024-02-01",
+          "source": "local_file",
+          "title": "Hiring Resumed – Q1 2024"
+        }
+      }
+    ],
+    "chrono_chunks": [
+      {
+        "id": "LOCAL-salary_bands_2023.md-chunk-0",
+        "metadata": {
+          "doc_type": "unstructured_text",
+          "source": "local_file",
+          "effective_date": "2023-04-01",
+          "title": "Salary Bands 2023"
+        }
+      },
+      {
+        "id": "LOCAL-salary_bands_2026.md-chunk-0",
+        "metadata": {
+          "doc_type": "structured_table",
+          "source": "local_file",
+          "title": "Salary Bands 2026 Revision",
+          "effective_date": "2026-01-15"
+        }
+      },
+      {
+        "id": "LOCAL-performance_review_2024.md-chunk-0",
+        "metadata": {
+          "title": "Performance Review Cycle 2024",
+          "doc_type": "unstructured_text",
+          "effective_date": "2024-01-01",
+          "source": "local_file"
+        }
+      },
+      {
+        "id": "LOCAL-hiring_freeze_2023.md-chunk-0",
+        "metadata": {
+          "title": "Hiring Freeze Notice Q3 2023",
+          "effective_date": "2023-07-01",
+          "source": "local_file",
+          "doc_type": "unstructured_text"
+        }
+      },
+      {
+        "id": "LOCAL-hiring_resume_2024.md-chunk-0",
+        "metadata": {
+          "doc_type": "unstructured_text",
+          "source": "local_file",
+          "effective_date": "2024-02-01",
+          "title": "Hiring Resumed – Q1 2024"
+        }
+      }
+    ]
+  },
+  {
+    "query_id": "Q07",
+    "category": "timeline",
+    "query": "How has the data retention policy for customer PII evolved?",
+    "naive_scores": {
+      "temporal_accuracy": 5,
+      "contradiction_handling": 5,
+      "citation_quality": 1
+    },
+    "chrono_scores": {
+      "temporal_accuracy": 5,
+      "contradiction_handling": 5,
+      "citation_quality": 5
+    },
+    "naive_total": 11,
+    "chrono_total": 15,
+    "naive_time": 0.89,
+    "chrono_time": 17.78,
+    "expected_behavior": "Must trace evolution: 2021 (indefinite retention, on-prem only, encryption optional, 45-day access requests) → 2025 (3-year max, cloud permitted, AES-256 mandatory, 30-day access requests). Should present both versions chronologically.",
+    "naive_answer": "The data retention policy for customer PII has undergone significant changes. Initially, in 2021, customer PII was retained indefinitely unless a customer requested deletion under CCPA, and it was stored on-premises with optional encryption. \n\nIn 2025, the policy was updated to reduce the retention period for customer PII to a maximum of 3 years. Additionally, cloud storage is now permitted, and encryption using AES-256 is mandatory. The data is stored in the cloud with AES-256 encryption, and deletion is done through automated purge.",
+    "chrono_answer": "The data retention policy for customer PII has undergone significant changes between 2021 and 2025. Here's a chronological narrative of the evolution:\n\n**Initial Policy (2021)**: As stated in the [LOCAL-data_retention_2021.md-chunk-0](https://example.com/LOCAL-data_retention_2021.md-chunk-0) document, effective June 1, 2021, the company retained all customer data for a minimum of 7 years in compliance with SOX requirements. Personal data could be stored indefinitely unless a customer requested deletion under CCPA. Backup archives were maintained on-premises, and encryption at rest was recommended but not mandatory. Data access requests had to be fulfilled within 45 business days.\n\n**Changes Introduced in 2025**: The [LOCAL-data_retention_2025.md-chunk-0](https://example.com/LOCAL-data_retention_2025.md-chunk-0) document, effective May 1, 2025, superseded the 2021 policy. This new policy introduced several key changes, as outlined in [LOCAL-data_retention_2025.md-chunk-2](https://example.com/LOCAL-data_retention_2025.md-chunk-2):\n- The retention period for customer PII was reduced from indefinite to a maximum of 3 years.\n- Cloud storage was now permitted, whereas it was previously prohibited.\n- Encryption at rest became mandatory, using AES-256.\n- The timeframe for fulfilling data access requests was shortened from 45 business days to 30 days.\n- The requirement for on-premises-only storage was removed.\n\n**Detailed Retention Schedule (2025)**: The [LOCAL-data_retention_2025.md-chunk-1](https://example.com/LOCAL-data_retention_2025.md-chunk-1) document, also effective May 1, 2025, provided a detailed retention schedule. For customer PII, the retention period was set at a maximum of 3 years, with storage in an encrypted cloud environment and automated purge upon deletion.\n\nIn summary, between 2021 and 2025, the company significantly overhauled its data retention policy, moving from indefinite storage of customer PII with optional encryption to a more secure, cloud-based system with a 3-year maximum retention period and mandatory AES-256 encryption. These changes reflect a shift towards more stringent data protection measures and alignment with evolving regulatory requirements.",
+    "naive_judge_reasoning": "The answer perfectly reflects the correct time period, mentioning both the 2021 and 2025 policies correctly. It also handles contradictions by clearly presenting the evolution of the policy, indicating what was updated. However, it lacks any form of citation or source attribution for the information provided.",
+    "chrono_judge_reasoning": "The answer accurately reflects the evolution of the data retention policy between 2021 and 2025, presenting both versions chronologically. It explicitly identifies superseded documents and explains the conflict resolution, demonstrating excellent temporal accuracy and contradiction handling. The response also cites specific document names, effective dates, and chunk IDs, showcasing high-quality citations.",
+    "naive_chunks": [
+      {
+        "id": "LOCAL-data_retention_2021.md-chunk-0",
+        "metadata": {
+          "effective_date": "2021-06-01",
+          "source": "local_file",
+          "doc_type": "unstructured_text",
+          "title": "Data Retention Policy 2021"
+        }
+      },
+      {
+        "id": "LOCAL-data_retention_2025.md-chunk-2",
+        "metadata": {
+          "doc_type": "structured_table",
+          "effective_date": "2025-05-01",
+          "title": "Data Retention Policy 2025 – GDPR Aligned",
+          "source": "local_file"
+        }
+      },
+      {
+        "id": "LOCAL-data_retention_2025.md-chunk-1",
+        "metadata": {
+          "source": "local_file",
+          "doc_type": "structured_table",
+          "effective_date": "2025-05-01",
+          "title": "Data Retention Policy 2025 – GDPR Aligned"
+        }
+      },
+      {
+        "id": "LOCAL-data_retention_2025.md-chunk-0",
+        "metadata": {
+          "doc_type": "structured_table",
+          "effective_date": "2025-05-01",
+          "source": "local_file",
+          "title": "Data Retention Policy 2025 – GDPR Aligned"
+        }
+      },
+      {
+        "id": "LOCAL-remote_work_policy_2025.md-chunk-0",
+        "metadata": {
+          "source": "local_file",
+          "doc_type": "structured_table",
+          "effective_date": "2025-01-10",
+          "title": "Remote Work Policy 2025 Update"
+        }
+      }
+    ],
+    "chrono_chunks": [
+      {
+        "id": "LOCAL-data_retention_2021.md-chunk-0",
+        "metadata": {
+          "title": "Data Retention Policy 2021",
+          "doc_type": "unstructured_text",
+          "source": "local_file",
+          "effective_date": "2021-06-01"
+        }
+      },
+      {
+        "id": "LOCAL-data_retention_2025.md-chunk-2",
+        "metadata": {
+          "doc_type": "structured_table",
+          "source": "local_file",
+          "effective_date": "2025-05-01",
+          "title": "Data Retention Policy 2025 – GDPR Aligned"
+        }
+      },
+      {
+        "id": "LOCAL-data_retention_2025.md-chunk-0",
+        "metadata": {
+          "effective_date": "2025-05-01",
+          "source": "local_file",
+          "title": "Data Retention Policy 2025 – GDPR Aligned",
+          "doc_type": "structured_table"
+        }
+      },
+      {
+        "id": "LOCAL-data_retention_2025.md-chunk-1",
+        "metadata": {
+          "effective_date": "2025-05-01",
+          "source": "local_file",
+          "doc_type": "structured_table",
+          "title": "Data Retention Policy 2025 – GDPR Aligned"
+        }
+      },
+      {
+        "id": "LOCAL-remote_work_policy_2025.md-chunk-0",
+        "metadata": {
+          "source": "local_file",
+          "effective_date": "2025-01-10",
+          "title": "Remote Work Policy 2025 Update",
+          "doc_type": "structured_table"
+        }
+      }
+    ]
+  },
+  {
+    "query_id": "Q08",
+    "category": "historical",
+    "query": "What was the lodging reimbursement limit in 2022?",
+    "naive_scores": {
+      "temporal_accuracy": 5,
+      "contradiction_handling": 1,
+      "citation_quality": 1
+    },
+    "chrono_scores": {
+      "temporal_accuracy": 5,
+      "contradiction_handling": 5,
+      "citation_quality": 5
+    },
+    "naive_total": 7,
+    "chrono_total": 15,
+    "naive_time": 0.69,
+    "chrono_time": 14.91,
+    "expected_behavior": "Must answer $200 per night, citing the 2022 travel memo. Should NOT substitute the 2026 figure ($250/$350). May optionally note that the limit has since been updated.",
+    "naive_answer": "The lodging reimbursement limit in 2022 was $200 per night.",
+    "chrono_answer": "According to the historical document [LOCAL-travel_memo_2022.md-chunk-0], which outlines the travel and expense guidelines for 2022, the lodging reimbursement limit at that time was $200 per night. This information is directly cited from the May 2022 travel memo.\n\nNote that the policy has since been updated, as indicated by the 2026 corporate travel policy. However, as of 2022, the lodging reimbursement limit was $200 per night, as stated in the 2022 travel memo.",
+    "naive_judge_reasoning": "The answer correctly reflects the 2022 lodging reimbursement limit, demonstrating high temporal accuracy. However, it fails to cite any sources or documents, resulting in low citation quality. Additionally, it does not address potential contradictions with more recent updates, leading to a low score in contradiction handling.",
+    "chrono_judge_reasoning": "The answer perfectly reflects the correct time period (2022), correctly identifies the superseded document (2022 travel memo) and the subsequent update (2026 corporate travel policy), and provides clear citations to specific documents and dates.",
+    "naive_chunks": [
+      {
+        "id": "LOCAL-travel_memo_2022.md-chunk-0",
+        "metadata": {
+          "doc_type": "unstructured_text",
+          "effective_date": "2022-05-01",
+          "title": "Travel Expense Guidelines 2022",
+          "source": "local_file"
+        }
+      },
+      {
+        "id": "LOCAL-travel_policy_2026.md-chunk-1",
+        "metadata": {
+          "doc_type": "structured_table",
+          "source": "local_file",
+          "title": "Travel Policy 2026",
+          "effective_date": "2026-07-23"
+        }
+      },
+      {
+        "id": "LOCAL-travel_policy_2026.md-chunk-0",
+        "metadata": {
+          "doc_type": "structured_table",
+          "effective_date": "2026-07-23",
+          "title": "Travel Policy 2026",
+          "source": "local_file"
+        }
+      },
+      {
+        "id": "LOCAL-travel_policy_2026.md-chunk-3",
+        "metadata": {
+          "effective_date": "2026-07-23",
+          "title": "Travel Policy 2026",
+          "source": "local_file",
+          "doc_type": "structured_table"
+        }
+      },
+      {
+        "id": "LOCAL-remote_work_policy_2025.md-chunk-0",
+        "metadata": {
+          "effective_date": "2025-01-10",
+          "title": "Remote Work Policy 2025 Update",
+          "doc_type": "structured_table",
+          "source": "local_file"
+        }
+      }
+    ],
+    "chrono_chunks": [
+      {
+        "id": "LOCAL-travel_memo_2022.md-chunk-0",
+        "metadata": {
+          "title": "Travel Expense Guidelines 2022",
+          "source": "local_file",
+          "effective_date": "2022-05-01",
+          "doc_type": "unstructured_text"
+        }
+      },
+      {
+        "id": "LOCAL-travel_policy_2026.md-chunk-1",
+        "metadata": {
+          "title": "Travel Policy 2026",
+          "source": "local_file",
+          "doc_type": "structured_table",
+          "effective_date": "2026-07-23"
+        }
+      },
+      {
+        "id": "LOCAL-travel_policy_2026.md-chunk-3",
+        "metadata": {
+          "title": "Travel Policy 2026",
+          "effective_date": "2026-07-23",
+          "source": "local_file",
+          "doc_type": "structured_table"
+        }
+      },
+      {
+        "id": "LOCAL-travel_policy_2026.md-chunk-2",
+        "metadata": {
+          "doc_type": "structured_table",
+          "source": "local_file",
+          "effective_date": "2026-07-23",
+          "title": "Travel Policy 2026"
+        }
+      },
+      {
+        "id": "LOCAL-travel_policy_2026.md-chunk-0",
+        "metadata": {
+          "effective_date": "2026-07-23",
+          "doc_type": "structured_table",
+          "title": "Travel Policy 2026",
+          "source": "local_file"
+        }
+      }
+    ]
+  },
+  {
+    "query_id": "Q09",
+    "category": "current_state",
+    "query": "What equipment stipend do Senior engineers get for remote work?",
+    "naive_scores": {
+      "temporal_accuracy": 5,
+      "contradiction_handling": 1,
+      "citation_quality": 1
+    },
+    "chrono_scores": {
+      "temporal_accuracy": 5,
+      "contradiction_handling": 5,
+      "citation_quality": 5
+    },
+    "naive_total": 7,
+    "chrono_total": 15,
+    "naive_time": 3.14,
+    "chrono_time": 18.53,
+    "expected_behavior": "Must answer $1,000/year from the 2025 remote work policy (Senior tier = 2-5 years). Must note that no stipend existed under the 2022 policy. Should cite the correct tier from the table.",
+    "naive_answer": "According to the provided context, Senior engineers (2-5 yrs of experience) receive a $1,000/year equipment stipend for remote work.",
+    "chrono_answer": "According to the current remote work policy (effective January 10, 2025, as stated in [LOCAL-remote_work_policy_2025.md-chunk-0]), Senior engineers are entitled to an equipment stipend of $1,000 per year for remote work. This policy supersedes the March 2022 Remote Work Guidelines.\n\nIt's worth noting that the remote work policy has undergone changes since 2022, including an increase in remote days and the introduction of an equipment stipend. The current policy provides more flexible working arrangements and better support for remote work.\n\nSource: [LOCAL-remote_work_policy_2025.md-chunk-0], effective January 10, 2025.",
+    "naive_judge_reasoning": "The answer accurately reflects the correct time period for the equipment stipend of Senior engineers, as it aligns with the expected behavior citing the 2025 remote work policy. However, it fails to identify and resolve potential contradictions by not mentioning the 2022 policy or any other superseded documents. Additionally, the answer lacks specific citations to documents, dates, or IDs, which are necessary for high-quality citation.",
+    "chrono_judge_reasoning": "The answer accurately reflects the current time period (2025) and clearly distinguishes it from the outdated 2022 policy. It explicitly mentions the supersession of the 2022 policy by the 2025 policy, resolving any potential conflict. The answer also provides a specific citation, including the document name and effective date.",
+    "naive_chunks": [
+      {
+        "id": "LOCAL-remote_work_policy_2025.md-chunk-0",
+        "metadata": {
+          "source": "local_file",
+          "title": "Remote Work Policy 2025 Update",
+          "effective_date": "2025-01-10",
+          "doc_type": "structured_table"
+        }
+      },
+      {
+        "id": "LOCAL-salary_bands_2026.md-chunk-0",
+        "metadata": {
+          "effective_date": "2026-01-15",
+          "source": "local_file",
+          "title": "Salary Bands 2026 Revision",
+          "doc_type": "structured_table"
+        }
+      },
+      {
+        "id": "LOCAL-salary_bands_2023.md-chunk-0",
+        "metadata": {
+          "effective_date": "2023-04-01",
+          "doc_type": "unstructured_text",
+          "source": "local_file",
+          "title": "Salary Bands 2023"
+        }
+      },
+      {
+        "id": "LOCAL-remote_work_policy_2022.md-chunk-0",
+        "metadata": {
+          "source": "local_file",
+          "effective_date": "2022-03-15",
+          "doc_type": "unstructured_text",
+          "title": "Remote Work Policy 2022"
+        }
+      },
+      {
+        "id": "LOCAL-travel_memo_2022.md-chunk-0",
+        "metadata": {
+          "doc_type": "unstructured_text",
+          "source": "local_file",
+          "title": "Travel Expense Guidelines 2022",
+          "effective_date": "2022-05-01"
+        }
+      }
+    ],
+    "chrono_chunks": [
+      {
+        "id": "LOCAL-remote_work_policy_2025.md-chunk-0",
+        "metadata": {
+          "doc_type": "structured_table",
+          "title": "Remote Work Policy 2025 Update",
+          "effective_date": "2025-01-10",
+          "source": "local_file"
+        }
+      },
+      {
+        "id": "LOCAL-remote_work_policy_2022.md-chunk-0",
+        "metadata": {
+          "doc_type": "unstructured_text",
+          "source": "local_file",
+          "title": "Remote Work Policy 2022",
+          "effective_date": "2022-03-15"
+        }
+      },
+      {
+        "id": "LOCAL-salary_bands_2023.md-chunk-0",
+        "metadata": {
+          "doc_type": "unstructured_text",
+          "effective_date": "2023-04-01",
+          "source": "local_file",
+          "title": "Salary Bands 2023"
+        }
+      },
+      {
+        "id": "LOCAL-salary_bands_2026.md-chunk-0",
+        "metadata": {
+          "doc_type": "structured_table",
+          "title": "Salary Bands 2026 Revision",
+          "source": "local_file",
+          "effective_date": "2026-01-15"
+        }
+      },
+      {
+        "id": "LOCAL-travel_memo_2022.md-chunk-0",
+        "metadata": {
+          "title": "Travel Expense Guidelines 2022",
+          "doc_type": "unstructured_text",
+          "effective_date": "2022-05-01",
+          "source": "local_file"
+        }
+      }
+    ]
+  },
+  {
+    "query_id": "Q10",
+    "category": "current_state",
+    "query": "How does the company handle consecutive low performance ratings?",
+    "naive_scores": {
+      "temporal_accuracy": 1,
+      "contradiction_handling": 5,
+      "citation_quality": 1
+    },
+    "chrono_scores": {
+      "temporal_accuracy": 5,
+      "contradiction_handling": 5,
+      "citation_quality": 5
+    },
+    "naive_total": 7,
+    "chrono_total": 15,
+    "naive_time": 0.57,
+    "chrono_time": 15.15,
+    "expected_behavior": "Must describe the 2024 performance review process: employees rated 'Below Expectations' for two consecutive years are placed on a 90-day PIP. Should cite the 2024 performance review document. There is only one version of this policy, so no conflict exists.",
+    "naive_answer": "The context doesn't contain enough information to answer the question about how the company handles consecutive low performance ratings. The provided context only discusses a company-wide hiring freeze and Valentino Rossi's team, but does not mention performance ratings or related policies.",
+    "chrono_answer": "According to the current performance review policy (document ID: LOCAL-performance_review_2024.md-chunk-0, effective date: 2024-01-01), the company handles consecutive low performance ratings by placing employees on a Performance Improvement Plan (PIP) if they receive a rating of \"Below Expectations\" for two consecutive years. The PIP lasts 90 days.\n\nIt's worth noting that this policy supersedes any prior performance review processes, but since there is no prior policy mentioned in the provided context, this is the current and applicable standard. \n\nSource: LOCAL-performance_review_2024.md-chunk-0, effective date: 2024-01-01.",
+    "naive_judge_reasoning": "The answer does not reflect the correct time period, as it does not discuss the 2024 performance review process. It correctly handles the lack of contradiction by stating the context does not contain enough information. However, it fails to provide any citation or source attribution.",
+    "chrono_judge_reasoning": "The answer perfectly reflects the correct time period by referencing the 2024 performance review policy. It also correctly identifies that this policy supersedes any prior processes and clearly explains the conflict resolution. The citation quality is excellent, providing the specific document name, effective date, and chunk ID.",
+    "naive_chunks": [
+      {
+        "id": "LOCAL-hiring_freeze_2023.md-chunk-0",
+        "metadata": {
+          "doc_type": "unstructured_text",
+          "source": "local_file",
+          "effective_date": "2023-07-01",
+          "title": "Hiring Freeze Notice Q3 2023"
+        }
+      },
+      {
+        "id": "TLAMA-6",
+        "metadata": {
+          "title": "TempLAMA-Valentino Rossi play",
+          "effective_date": "2016-01-01",
+          "source": "templama",
+          "doc_type": "structured_table"
+        }
+      },
+      {
+        "id": "TLAMA-5",
+        "metadata": {
+          "doc_type": "structured_table",
+          "effective_date": "2015-01-01",
+          "source": "templama",
+          "title": "TempLAMA-Valentino Rossi play"
+        }
+      },
+      {
+        "id": "TLAMA-9",
+        "metadata": {
+          "effective_date": "2019-01-01",
+          "doc_type": "structured_table",
+          "title": "TempLAMA-Valentino Rossi play",
+          "source": "templama"
+        }
+      },
+      {
+        "id": "TLAMA-3",
+        "metadata": {
+          "effective_date": "2013-01-01",
+          "source": "templama",
+          "title": "TempLAMA-Valentino Rossi play",
+          "doc_type": "structured_table"
+        }
+      }
+    ],
+    "chrono_chunks": [
+      {
+        "id": "LOCAL-hiring_freeze_2023.md-chunk-0",
+        "metadata": {
+          "title": "Hiring Freeze Notice Q3 2023",
+          "source": "local_file",
+          "doc_type": "unstructured_text",
+          "effective_date": "2023-07-01"
+        }
+      },
+      {
+        "id": "LOCAL-performance_review_2024.md-chunk-0",
+        "metadata": {
+          "source": "local_file",
+          "effective_date": "2024-01-01",
+          "doc_type": "unstructured_text",
+          "title": "Performance Review Cycle 2024"
+        }
+      },
+      {
+        "id": "LOCAL-travel_policy_2026.md-chunk-0",
+        "metadata": {
+          "source": "local_file",
+          "title": "Travel Policy 2026",
+          "effective_date": "2026-07-23",
+          "doc_type": "structured_table"
+        }
+      },
+      {
+        "id": "TLAMA-6",
+        "metadata": {
+          "source": "templama",
+          "doc_type": "structured_table",
+          "effective_date": "2016-01-01",
+          "title": "TempLAMA-Valentino Rossi play"
+        }
+      },
+      {
+        "id": "LOCAL-salary_bands_2023.md-chunk-0",
+        "metadata": {
+          "source": "local_file",
+          "doc_type": "unstructured_text",
+          "title": "Salary Bands 2023",
+          "effective_date": "2023-04-01"
+        }
+      }
+    ]
+  }
+]

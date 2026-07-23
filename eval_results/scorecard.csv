@@ -1,0 +1,11 @@
+Query ID,Category,Query,Naive Temporal,Naive Contradiction,Naive Citation,Naive Total,Chrono Temporal,Chrono Contradiction,Chrono Citation,Chrono Total,Naive Time (s),Chrono Time (s)
+Q01,current_state,What is the current daily meal allowance for business travel?,5,1,1,7,5,5,5,15,1.23,2.95
+Q02,historical,What was the remote work policy back in 2022?,5,5,3,13,5,5,5,15,0.84,2.88
+Q03,timeline,How have the company's salary bands for engineers changed over time?,5,5,1,11,5,5,5,15,1.21,3.79
+Q04,current_state,Is cloud storage permitted for customer PII?,5,4,4,13,5,5,5,15,0.89,15.16
+Q05,current_state,Is the company currently under a hiring freeze?,5,4,3,12,5,5,5,15,0.79,14.73
+Q06,current_state,What is the current base salary range for a Senior Engineer?,5,5,5,15,5,5,5,15,1.7,17.23
+Q07,timeline,How has the data retention policy for customer PII evolved?,5,5,1,11,5,5,5,15,0.89,17.78
+Q08,historical,What was the lodging reimbursement limit in 2022?,5,1,1,7,5,5,5,15,0.69,14.91
+Q09,current_state,What equipment stipend do Senior engineers get for remote work?,5,1,1,7,5,5,5,15,3.14,18.53
+Q10,current_state,How does the company handle consecutive low performance ratings?,1,5,1,7,5,5,5,15,0.57,15.15
