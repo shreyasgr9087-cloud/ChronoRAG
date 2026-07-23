@@ -1,0 +1,717 @@
+{
+  "test_run_timestamp": "2026-07-23T13:58:50.271429",
+  "total_queries": 10,
+  "successful": 9,
+  "errors": 1,
+  "total_execution_time_seconds": 126.84,
+  "results": [
+    {
+      "query_id": "Q01",
+      "query": "What is the current remote work policy?",
+      "category": "CURRENT_STATE",
+      "expected_behavior": "Should return the 2025 policy (3-5 remote days by seniority, equipment stipend, flexible hours). Must NOT blend the 2022 policy (2 days, no stipend, 9-5 hours). The Skeptic should flag the 2022 doc as superseded.",
+      "expected_facts": [
+        "Junior employees get 3 remote days per week",
+        "Equipment stipend is $500-$1500/year",
+        "Core hours are flexible 10 AM - 4 PM overlap",
+        "2022 policy (2 days, no stipend) is explicitly superseded"
+      ],
+      "status": "SUCCESS",
+      "error": null,
+      "execution_time_seconds": 2.71,
+      "pipeline_output": {
+        "final_answer": "The current remote work policy, as outlined in [LOCAL-remote_work_policy_2025.md](LOCAL-remote_work_policy_2025.md) effective January 10, 2025, supersedes the March 2022 Remote Work Guidelines. According to this policy, the updated remote work schedule is as follows:\n\n| Employee Tier | Remote Days Per Week | Equipment Stipend | Approval Required |\n| :--- | :--- | :--- | :--- |\n| Junior (0-2 yrs) | 3 days | $500/year | Manager |\n| Senior (2-5 yrs) | 4 days | $1,000/year | Self-Service |\n| Principal (5+ yrs) | Fully Remote | $1,500/year | None |\n\nThis policy update increased remote days from 2 to 3-5 depending on seniority, introduced an equipment stipend, changed core hours to a flexible 10 AM – 4 PM overlap window, and replaced the VPN requirement with Zero Trust architecture.\n\nNote that [LOCAL-remote_work_policy_2025.md](LOCAL-remote_work_policy_2025.md) is the current and active policy, having superseded the older [LOCAL-remote_work_policy_2022.md](LOCAL-remote_work_policy_2022.md) as indicated in the Conflict Audit Log.",
+        "router": {
+          "intent_type": "current",
+          "target_year": null,
+          "reasoning": "The user is asking about the current state of something without specifying a time period."
+        },
+        "conflict_report": {
+          "has_conflicts": true,
+          "conflicts": [
+            {
+              "invalidated_doc_id": "LOCAL-remote_work_policy_2022.md",
+              "valid_doc_id": "LOCAL-remote_work_policy_2025.md",
+              "conflict_reason": "Newer effective date and updated remote work policy"
+            }
+          ],
+          "surviving_doc_ids": [
+            "LOCAL-remote_work_policy_2025.md",
+            "LOCAL-travel_policy_2026.md",
+            "LOCAL-data_retention_2021.md",
+            "LOCAL-hiring_freeze_2023.md"
+          ],
+          "confidence_score": 0.9
+        },
+        "retrieved_chunks": [
+          {
+            "id": "LOCAL-remote_work_policy_2025.md",
+            "effective_date": "2025-01-10",
+            "doc_type": "structured_table",
+            "title": "Remote Work Policy 2025 Update",
+            "content_preview": "# Remote Work Policy – January 2025 Update\n\nThis policy supersedes the March 2022 Remote Work Guidelines effective immediately.\n\n## Updated Remote Work Schedule\n\n| Employee Tier | Remote Days Per Week | Equipment Stipend | Approval Required |\n| :--- | :--- | :--- | :--- |\n| Junior (0-2 yrs) | 3 days"
+          },
+          {
+            "id": "LOCAL-remote_work_policy_2022.md",
+            "effective_date": "2022-03-15",
+            "doc_type": "unstructured_text",
+            "title": "Remote Work Policy 2022",
+            "content_preview": "# Remote Work Guidelines – March 2022\n\nEffective March 15, 2022, the company permits all full-time employees to work remotely up to 2 days per week. Employees must be physically present at the office for at least 3 days per week.\n\nRemote work requests must be approved by the direct manager at least "
+          },
+          {
+            "id": "LOCAL-data_retention_2021.md",
+            "effective_date": "2021-06-01",
+            "doc_type": "unstructured_text",
+            "title": "Data Retention Policy 2021",
+            "content_preview": "# Data Retention & Privacy Policy – June 2021\n\nThe company retains all customer data for a minimum of 7 years in compliance with SOX requirements. Personal data may be stored indefinitely unless a customer requests deletion under CCPA.\n\nBackup archives are maintained on-premises in the company's pri"
+          },
+          {
+            "id": "LOCAL-travel_policy_2026.md",
+            "effective_date": "2026-07-23",
+            "doc_type": "structured_table",
+            "title": "Travel Policy 2026",
+            "content_preview": "# Corporate Travel Policy & Expense Schedule 2026\n\n## 1. Overview\nEffective July 23, 2026, the company has updated its global travel and expense guidelines to reflect current economic conditions. This document serves as the active baseline for all corporate travel, client entertainment, and daily al"
+          },
+          {
+            "id": "LOCAL-hiring_freeze_2023.md",
+            "effective_date": "2023-07-01",
+            "doc_type": "unstructured_text",
+            "title": "Hiring Freeze Notice Q3 2023",
+            "content_preview": "# Company-Wide Hiring Freeze – Q3 2023\n\nEffective July 1, 2023, the company has implemented a company-wide hiring freeze across all departments. No new requisitions will be approved until further notice. All open positions that have not received signed offer letters are to be placed on hold.\n\nIntern"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "Q02",
+      "query": "What was the remote work policy in 2022?",
+      "category": "HISTORICAL_SNAPSHOT",
+      "expected_behavior": "Should return the 2022 policy (2 days/week, no equipment stipend, 9-5 core hours). Router should classify as 'historical' with target_year='2022'. May also mention the 2025 update as context but should primarily describe 2022 state.",
+      "expected_facts": [
+        "2 days per week remote",
+        "No equipment stipend",
+        "Core hours 9 AM - 5 PM",
+        "VPN access mandatory"
+      ],
+      "status": "SUCCESS",
+      "error": null,
+      "execution_time_seconds": 2.66,
+      "pipeline_output": {
+        "final_answer": "According to the [LOCAL-remote_work_policy_2022.md](https://localhost/LOCAL-remote_work_policy_2022.md) document, effective March 15, 2022, the company's remote work policy stated that all full-time employees were permitted to work remotely up to 2 days per week. Employees were required to be physically present at the office for at least 3 days per week. \n\nRemote work requests had to be approved by the direct manager at least one week in advance, and no equipment stipend was provided for home offices. Employees working remotely were expected to be available during core hours (9 AM – 5 PM local time), and VPN access was mandatory for all remote sessions.\n\nNote that this policy has since been updated, as indicated by the [LOCAL-remote_work_policy_2025.md](https://localhost/LOCAL-remote_work_policy_2025.md) document, which supersedes the 2022 guidelines. However, as of 2022, the above policy was in effect.",
+        "router": {
+          "intent_type": "historical",
+          "target_year": "2022",
+          "reasoning": "The user is asking about a specific past time period, 'in 2022', which indicates a historical query with a target year."
+        },
+        "conflict_report": {
+          "has_conflicts": false,
+          "conflicts": [],
+          "surviving_doc_ids": [
+            "LOCAL-data_retention_2025.md",
+            "LOCAL-remote_work_policy_2025.md",
+            "LOCAL-salary_bands_2023.md",
+            "LOCAL-data_retention_2021.md",
+            "LOCAL-remote_work_policy_2022.md"
+          ],
+          "confidence_score": 0.9
+        },
+        "retrieved_chunks": [
+          {
+            "id": "LOCAL-remote_work_policy_2025.md",
+            "effective_date": "2025-01-10",
+            "doc_type": "structured_table",
+            "title": "Remote Work Policy 2025 Update",
+            "content_preview": "# Remote Work Policy – January 2025 Update\n\nThis policy supersedes the March 2022 Remote Work Guidelines effective immediately.\n\n## Updated Remote Work Schedule\n\n| Employee Tier | Remote Days Per Week | Equipment Stipend | Approval Required |\n| :--- | :--- | :--- | :--- |\n| Junior (0-2 yrs) | 3 days"
+          },
+          {
+            "id": "LOCAL-remote_work_policy_2022.md",
+            "effective_date": "2022-03-15",
+            "doc_type": "unstructured_text",
+            "title": "Remote Work Policy 2022",
+            "content_preview": "# Remote Work Guidelines – March 2022\n\nEffective March 15, 2022, the company permits all full-time employees to work remotely up to 2 days per week. Employees must be physically present at the office for at least 3 days per week.\n\nRemote work requests must be approved by the direct manager at least "
+          },
+          {
+            "id": "LOCAL-data_retention_2025.md",
+            "effective_date": "2025-05-01",
+            "doc_type": "structured_table",
+            "title": "Data Retention Policy 2025 – GDPR Aligned",
+            "content_preview": "# Data Retention & Privacy Policy – May 2025 (GDPR-Aligned)\n\nThis policy supersedes the June 2021 Data Retention Policy in its entirety.\n\n## Retention Schedule\n\n| Data Category | Retention Period | Storage | Encryption | Deletion Method |\n| :--- | :--- | :--- | :--- | :--- |\n| Customer PII | 3 years"
+          },
+          {
+            "id": "LOCAL-data_retention_2021.md",
+            "effective_date": "2021-06-01",
+            "doc_type": "unstructured_text",
+            "title": "Data Retention Policy 2021",
+            "content_preview": "# Data Retention & Privacy Policy – June 2021\n\nThe company retains all customer data for a minimum of 7 years in compliance with SOX requirements. Personal data may be stored indefinitely unless a customer requests deletion under CCPA.\n\nBackup archives are maintained on-premises in the company's pri"
+          },
+          {
+            "id": "LOCAL-salary_bands_2023.md",
+            "effective_date": "2023-04-01",
+            "doc_type": "unstructured_text",
+            "title": "Salary Bands 2023",
+            "content_preview": "# Annual Compensation Review – 2023\n\nAs of April 2023, the company has standardized salary bands across all departments. The base salary for entry-level software engineers is $85,000 per year. Mid-level engineers earn between $110,000 and $130,000. Senior engineers are compensated in the range of $1"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "Q03",
+      "query": "How has the remote work policy changed over time?",
+      "category": "TIMELINE_EVOLUTION",
+      "expected_behavior": "Router should classify as 'timeline'. Should present both 2022 and 2025 policies chronologically, showing the evolution: 2 days->3-5 days, no stipend->$500-1500, 9-5->flexible hours, VPN->Zero Trust.",
+      "expected_facts": [
+        "2022: 2 days remote, no stipend, 9-5 hours",
+        "2025: 3-5 days by seniority, stipend added, flexible hours",
+        "Chronological progression shown"
+      ],
+      "status": "SUCCESS",
+      "error": null,
+      "execution_time_seconds": 3.3,
+      "pipeline_output": {
+        "final_answer": "To understand the evolution of the remote work policy over time, let's examine the changes chronologically.\n\n### Initial Policy (2022-03-15)\nAs outlined in the [LOCAL-remote_work_policy_2022.md](LOCAL-remote_work_policy_2022.md) document, effective March 15, 2022, the company initially allowed all full-time employees to work remotely up to 2 days per week. Employees had to be physically present at the office for at least 3 days per week, and remote work requests required approval by the direct manager at least one week in advance. There was no equipment stipend provided for home offices, and VPN access was mandatory for all remote sessions.\n\n### Updated Policy (2025-01-10)\nThe [LOCAL-remote_work_policy_2025.md](LOCAL-remote_work_policy_2025.md) document, effective January 10, 2025, introduced significant changes to the remote work policy. The key updates included:\n- An increase in remote work days, with Junior employees (0-2 years) allowed 3 days, Senior employees (2-5 years) allowed 4 days, and Principal employees (5+ years) allowed to work fully remote.\n- The introduction of an equipment stipend, with amounts varying by employee tier: $500/year for Junior, $1,000/year for Senior, and $1,500/year for Principal employees.\n- A shift from a fixed core hour schedule (9 AM – 5 PM) to a flexible 10 AM – 4 PM overlap window.\n- Replacement of the VPN requirement with a Zero Trust architecture.\n\nThese changes marked a significant evolution in the company's approach to remote work, reflecting a more flexible and supportive stance towards employees' work arrangements.\n\n### Current Status\nAs of the last available update in [LOCAL-remote_work_policy_2025.md](LOCAL-remote_work_policy_2025.md), the remote work policy continues to reflect the changes introduced in 2025, with no further updates mentioned in the provided documents. This policy supersedes all previous guidelines, including the 2022 version, as indicated by the conflict audit log.\n\nIn summary, the remote work policy has transitioned from a more restrictive model in 2022 to a more flexible and employee-centric approach in 2025, with increases in remote work days, the introduction of equipment stipends, and a move towards more flexible working hours and enhanced security measures.",
+        "router": {
+          "intent_type": "timeline",
+          "target_year": null,
+          "reasoning": "The user is asking about how the remote work policy has changed over time, indicating a desire to understand the progression or evolution of the policy, which fits the 'timeline' intent type."
+        },
+        "conflict_report": {
+          "has_conflicts": true,
+          "conflicts": [
+            {
+              "invalidated_doc_id": "LOCAL-remote_work_policy_2022.md",
+              "valid_doc_id": "LOCAL-remote_work_policy_2025.md",
+              "conflict_reason": "Newer effective date (2025-01-10 supersedes 2022-03-15) for remote work policy"
+            }
+          ],
+          "surviving_doc_ids": [
+            "LOCAL-data_retention_2025.md",
+            "LOCAL-remote_work_policy_2025.md",
+            "LOCAL-salary_bands_2026.md",
+            "LOCAL-travel_policy_2026.md",
+            "LOCAL-remote_work_policy_2022.md"
+          ],
+          "confidence_score": 0.9
+        },
+        "retrieved_chunks": [
+          {
+            "id": "LOCAL-remote_work_policy_2025.md",
+            "effective_date": "2025-01-10",
+            "doc_type": "structured_table",
+            "title": "Remote Work Policy 2025 Update",
+            "content_preview": "# Remote Work Policy – January 2025 Update\n\nThis policy supersedes the March 2022 Remote Work Guidelines effective immediately.\n\n## Updated Remote Work Schedule\n\n| Employee Tier | Remote Days Per Week | Equipment Stipend | Approval Required |\n| :--- | :--- | :--- | :--- |\n| Junior (0-2 yrs) | 3 days"
+          },
+          {
+            "id": "LOCAL-remote_work_policy_2022.md",
+            "effective_date": "2022-03-15",
+            "doc_type": "unstructured_text",
+            "title": "Remote Work Policy 2022",
+            "content_preview": "# Remote Work Guidelines – March 2022\n\nEffective March 15, 2022, the company permits all full-time employees to work remotely up to 2 days per week. Employees must be physically present at the office for at least 3 days per week.\n\nRemote work requests must be approved by the direct manager at least "
+          },
+          {
+            "id": "LOCAL-data_retention_2025.md",
+            "effective_date": "2025-05-01",
+            "doc_type": "structured_table",
+            "title": "Data Retention Policy 2025 – GDPR Aligned",
+            "content_preview": "# Data Retention & Privacy Policy – May 2025 (GDPR-Aligned)\n\nThis policy supersedes the June 2021 Data Retention Policy in its entirety.\n\n## Retention Schedule\n\n| Data Category | Retention Period | Storage | Encryption | Deletion Method |\n| :--- | :--- | :--- | :--- | :--- |\n| Customer PII | 3 years"
+          },
+          {
+            "id": "LOCAL-travel_policy_2026.md",
+            "effective_date": "2026-07-23",
+            "doc_type": "structured_table",
+            "title": "Travel Policy 2026",
+            "content_preview": "# Corporate Travel Policy & Expense Schedule 2026\n\n## 1. Overview\nEffective July 23, 2026, the company has updated its global travel and expense guidelines to reflect current economic conditions. This document serves as the active baseline for all corporate travel, client entertainment, and daily al"
+          },
+          {
+            "id": "LOCAL-salary_bands_2026.md",
+            "effective_date": "2026-01-15",
+            "doc_type": "structured_table",
+            "title": "Salary Bands 2026 Revision",
+            "content_preview": "# Compensation Framework – 2026 Revision\n\nThis document supersedes the April 2023 compensation review.\n\n## Engineering Salary Bands (Effective January 15, 2026)\n\n| Level | Title | Base Salary Range | Annual Bonus | RSU Grant |\n| :--- | :--- | :--- | :--- | :--- |\n| L3 | Entry Engineer | $105,000 – $"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "Q04",
+      "query": "What is the daily meal allowance for business travel?",
+      "category": "CROSS_MODAL_CONFLICT",
+      "expected_behavior": "Should return $100/day from the 2026 structured table (travel_policy_2026.md), NOT $50/day from the 2022 unstructured text (travel_memo_2022.md). The Skeptic should detect the text-vs-table cross-modal conflict and invalidate the 2022 memo.",
+      "expected_facts": [
+        "Daily meal allowance is $100.00",
+        "Receipt required only over $25",
+        "2022 cap of $50/day is explicitly superseded",
+        "Active policy status from 2026 table"
+      ],
+      "status": "SUCCESS",
+      "error": null,
+      "execution_time_seconds": 9.9,
+      "pipeline_output": {
+        "final_answer": "According to the current corporate travel policy, as outlined in [LOCAL-travel_policy_2026.md]( LOCAL-travel_policy_2026.md) with an effective date of July 23, 2026, the daily meal allowance for business travel is $100.00. This policy explicitly supersedes the previous travel expense guidelines, including the 2022 travel memo, which had a lower daily meal cap of $50. \n\nAs stated in the [LOCAL-travel_policy_2026.md]( LOCAL-travel_policy_2026.md), receipts are required for meal expenses over $25. \n\nIt's worth noting that the Conflict Audit Log confirms [LOCAL-travel_policy_2026.md]( LOCAL-travel_policy_2026.md) as the surviving document with a confidence score of 0.9, and it explicitly overrides the older [LOCAL-travel_memo_2022.md](LOCAL-travel_memo_2022.md) due to its newer effective date and explicit override statement.",
+        "router": {
+          "intent_type": "current",
+          "target_year": null,
+          "reasoning": "The user is asking about the daily meal allowance for business travel without specifying a time, indicating they are inquiring about the current state."
+        },
+        "conflict_report": {
+          "has_conflicts": true,
+          "conflicts": [
+            {
+              "invalidated_doc_id": "LOCAL-travel_memo_2022.md",
+              "valid_doc_id": "LOCAL-travel_policy_2026.md",
+              "conflict_reason": "Newer effective date (2026) and explicit override statement"
+            }
+          ],
+          "surviving_doc_ids": [
+            "LOCAL-travel_policy_2026.md",
+            "LOCAL-salary_bands_2023.md",
+            "LOCAL-remote_work_policy_2022.md",
+            "LOCAL-data_retention_2021.md"
+          ],
+          "confidence_score": 0.9
+        },
+        "retrieved_chunks": [
+          {
+            "id": "LOCAL-travel_memo_2022.md",
+            "effective_date": "2022-05-01",
+            "doc_type": "unstructured_text",
+            "title": "Travel Expense Guidelines 2022",
+            "content_preview": "# Travel and Expense Guidelines – May 2022\n\nAll business travel must be approved by the department head at least two weeks in advance. The daily meal allowance is capped at $50 per day regardless of destination. Lodging reimbursement is limited to $200 per night.\n\nAll flights must be booked in Econo"
+          },
+          {
+            "id": "LOCAL-travel_policy_2026.md",
+            "effective_date": "2026-07-23",
+            "doc_type": "structured_table",
+            "title": "Travel Policy 2026",
+            "content_preview": "# Corporate Travel Policy & Expense Schedule 2026\n\n## 1. Overview\nEffective July 23, 2026, the company has updated its global travel and expense guidelines to reflect current economic conditions. This document serves as the active baseline for all corporate travel, client entertainment, and daily al"
+          },
+          {
+            "id": "LOCAL-remote_work_policy_2022.md",
+            "effective_date": "2022-03-15",
+            "doc_type": "unstructured_text",
+            "title": "Remote Work Policy 2022",
+            "content_preview": "# Remote Work Guidelines – March 2022\n\nEffective March 15, 2022, the company permits all full-time employees to work remotely up to 2 days per week. Employees must be physically present at the office for at least 3 days per week.\n\nRemote work requests must be approved by the direct manager at least "
+          },
+          {
+            "id": "LOCAL-salary_bands_2023.md",
+            "effective_date": "2023-04-01",
+            "doc_type": "unstructured_text",
+            "title": "Salary Bands 2023",
+            "content_preview": "# Annual Compensation Review – 2023\n\nAs of April 2023, the company has standardized salary bands across all departments. The base salary for entry-level software engineers is $85,000 per year. Mid-level engineers earn between $110,000 and $130,000. Senior engineers are compensated in the range of $1"
+          },
+          {
+            "id": "LOCAL-data_retention_2021.md",
+            "effective_date": "2021-06-01",
+            "doc_type": "unstructured_text",
+            "title": "Data Retention Policy 2021",
+            "content_preview": "# Data Retention & Privacy Policy – June 2021\n\nThe company retains all customer data for a minimum of 7 years in compliance with SOX requirements. Personal data may be stored indefinitely unless a customer requests deletion under CCPA.\n\nBackup archives are maintained on-premises in the company's pri"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "Q05",
+      "query": "What is the base salary for an entry-level software engineer?",
+      "category": "CROSS_MODAL_CONFLICT",
+      "expected_behavior": "Should return $105,000-$120,000 from the 2026 table, NOT $85,000 from the 2023 text. The Skeptic should flag the 2023 text as superseded by the 2026 structured table.",
+      "expected_facts": [
+        "Entry engineer (L3) salary is $105,000 - $120,000",
+        "Annual bonus is 12%",
+        "RSU grant of $20,000/yr",
+        "2023 figure of $85,000 is outdated"
+      ],
+      "status": "SUCCESS",
+      "error": null,
+      "execution_time_seconds": 16.6,
+      "pipeline_output": {
+        "final_answer": "The base salary range for an entry-level software engineer, as per the current compensation framework, is $105,000 to $120,000. This information supersedes any previous salary ranges, including the April 2023 compensation review, due to the updates made in the [LOCAL-salary_bands_2026.md](LOCAL-salary_bands_2026.md) document, which is effective as of January 15, 2026. Specifically, the entry-level base salary was increased from $85,000 to $105,000 minimum, as outlined in the \"Key Changes\" section of the document. \n\nSource: [LOCAL-salary_bands_2026.md](LOCAL-salary_bands_2026.md), effective January 15, 2026.",
+        "router": {
+          "intent_type": "current",
+          "target_year": null,
+          "reasoning": "The user is asking about the base salary for an entry-level software engineer without specifying a time period, implying they are looking for the current or latest information."
+        },
+        "conflict_report": {
+          "has_conflicts": true,
+          "conflicts": [
+            {
+              "invalidated_doc_id": "LOCAL-salary_bands_2023.md",
+              "valid_doc_id": "LOCAL-salary_bands_2026.md",
+              "conflict_reason": "Newer effective date and updated salary bands"
+            },
+            {
+              "invalidated_doc_id": "LOCAL-travel_memo_2022.md",
+              "valid_doc_id": "LOCAL-travel_policy_2026.md",
+              "conflict_reason": "Newer effective date and supersession of previous travel policy"
+            }
+          ],
+          "surviving_doc_ids": [
+            "LOCAL-salary_bands_2026.md",
+            "LOCAL-travel_policy_2026.md",
+            "LOCAL-remote_work_policy_2022.md"
+          ],
+          "confidence_score": 0.9
+        },
+        "retrieved_chunks": [
+          {
+            "id": "LOCAL-salary_bands_2023.md",
+            "effective_date": "2023-04-01",
+            "doc_type": "unstructured_text",
+            "title": "Salary Bands 2023",
+            "content_preview": "# Annual Compensation Review – 2023\n\nAs of April 2023, the company has standardized salary bands across all departments. The base salary for entry-level software engineers is $85,000 per year. Mid-level engineers earn between $110,000 and $130,000. Senior engineers are compensated in the range of $1"
+          },
+          {
+            "id": "LOCAL-salary_bands_2026.md",
+            "effective_date": "2026-01-15",
+            "doc_type": "structured_table",
+            "title": "Salary Bands 2026 Revision",
+            "content_preview": "# Compensation Framework – 2026 Revision\n\nThis document supersedes the April 2023 compensation review.\n\n## Engineering Salary Bands (Effective January 15, 2026)\n\n| Level | Title | Base Salary Range | Annual Bonus | RSU Grant |\n| :--- | :--- | :--- | :--- | :--- |\n| L3 | Entry Engineer | $105,000 – $"
+          },
+          {
+            "id": "LOCAL-travel_policy_2026.md",
+            "effective_date": "2026-07-23",
+            "doc_type": "structured_table",
+            "title": "Travel Policy 2026",
+            "content_preview": "# Corporate Travel Policy & Expense Schedule 2026\n\n## 1. Overview\nEffective July 23, 2026, the company has updated its global travel and expense guidelines to reflect current economic conditions. This document serves as the active baseline for all corporate travel, client entertainment, and daily al"
+          },
+          {
+            "id": "LOCAL-travel_memo_2022.md",
+            "effective_date": "2022-05-01",
+            "doc_type": "unstructured_text",
+            "title": "Travel Expense Guidelines 2022",
+            "content_preview": "# Travel and Expense Guidelines – May 2022\n\nAll business travel must be approved by the department head at least two weeks in advance. The daily meal allowance is capped at $50 per day regardless of destination. Lodging reimbursement is limited to $200 per night.\n\nAll flights must be booked in Econo"
+          },
+          {
+            "id": "LOCAL-remote_work_policy_2022.md",
+            "effective_date": "2022-03-15",
+            "doc_type": "unstructured_text",
+            "title": "Remote Work Policy 2022",
+            "content_preview": "# Remote Work Guidelines – March 2022\n\nEffective March 15, 2022, the company permits all full-time employees to work remotely up to 2 days per week. Employees must be physically present at the office for at least 3 days per week.\n\nRemote work requests must be approved by the direct manager at least "
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "Q06",
+      "query": "How long does the company retain customer personal data?",
+      "category": "CROSS_MODAL_CONFLICT",
+      "expected_behavior": "Should return 3 years maximum from the 2025 GDPR-aligned table, NOT 'indefinitely' from the 2021 text. The Skeptic should detect the massive contradiction (indefinite vs 3 years) and invalidate the 2021 doc.",
+      "expected_facts": [
+        "Customer PII retained for 3 years maximum",
+        "Cloud storage now permitted with AES-256 encryption",
+        "2021 policy of indefinite retention is superseded",
+        "Data access requests fulfilled within 30 days"
+      ],
+      "status": "SUCCESS",
+      "error": null,
+      "execution_time_seconds": 18.84,
+      "pipeline_output": {
+        "final_answer": "The company retains customer personal data (PII) for a maximum of 3 years. This information is stored in the cloud with mandatory AES-256 encryption and is subject to automated purge upon reaching the end of its retention period. \n\nThis policy is outlined in the document [LOCAL-data_retention_2025.md](LOCAL-data_retention_2025.md), effective May 1, 2025, which supersedes the June 2021 Data Retention Policy. Specifically, the 2025 policy reduces the retention period for customer PII from indefinite to a 3-year maximum, as detailed in the Retention Schedule table. \n\nSource: [LOCAL-data_retention_2025.md - 2025-05-01]",
+        "router": {
+          "intent_type": "current",
+          "target_year": null,
+          "reasoning": "The user is asking about the current retention policy of customer personal data without specifying a time period."
+        },
+        "conflict_report": {
+          "has_conflicts": true,
+          "conflicts": [
+            {
+              "invalidated_doc_id": "LOCAL-data_retention_2021.md",
+              "valid_doc_id": "LOCAL-data_retention_2025.md",
+              "conflict_reason": "Newer effective date and updated data retention policy"
+            }
+          ],
+          "surviving_doc_ids": [
+            "LOCAL-data_retention_2025.md",
+            "LOCAL-remote_work_policy_2022.md",
+            "LOCAL-hiring_freeze_2023.md",
+            "LOCAL-travel_policy_2026.md"
+          ],
+          "confidence_score": 0.9
+        },
+        "retrieved_chunks": [
+          {
+            "id": "LOCAL-data_retention_2021.md",
+            "effective_date": "2021-06-01",
+            "doc_type": "unstructured_text",
+            "title": "Data Retention Policy 2021",
+            "content_preview": "# Data Retention & Privacy Policy – June 2021\n\nThe company retains all customer data for a minimum of 7 years in compliance with SOX requirements. Personal data may be stored indefinitely unless a customer requests deletion under CCPA.\n\nBackup archives are maintained on-premises in the company's pri"
+          },
+          {
+            "id": "LOCAL-remote_work_policy_2022.md",
+            "effective_date": "2022-03-15",
+            "doc_type": "unstructured_text",
+            "title": "Remote Work Policy 2022",
+            "content_preview": "# Remote Work Guidelines – March 2022\n\nEffective March 15, 2022, the company permits all full-time employees to work remotely up to 2 days per week. Employees must be physically present at the office for at least 3 days per week.\n\nRemote work requests must be approved by the direct manager at least "
+          },
+          {
+            "id": "LOCAL-data_retention_2025.md",
+            "effective_date": "2025-05-01",
+            "doc_type": "structured_table",
+            "title": "Data Retention Policy 2025 – GDPR Aligned",
+            "content_preview": "# Data Retention & Privacy Policy – May 2025 (GDPR-Aligned)\n\nThis policy supersedes the June 2021 Data Retention Policy in its entirety.\n\n## Retention Schedule\n\n| Data Category | Retention Period | Storage | Encryption | Deletion Method |\n| :--- | :--- | :--- | :--- | :--- |\n| Customer PII | 3 years"
+          },
+          {
+            "id": "LOCAL-hiring_freeze_2023.md",
+            "effective_date": "2023-07-01",
+            "doc_type": "unstructured_text",
+            "title": "Hiring Freeze Notice Q3 2023",
+            "content_preview": "# Company-Wide Hiring Freeze – Q3 2023\n\nEffective July 1, 2023, the company has implemented a company-wide hiring freeze across all departments. No new requisitions will be approved until further notice. All open positions that have not received signed offer letters are to be placed on hold.\n\nIntern"
+          },
+          {
+            "id": "LOCAL-travel_policy_2026.md",
+            "effective_date": "2026-07-23",
+            "doc_type": "structured_table",
+            "title": "Travel Policy 2026",
+            "content_preview": "# Corporate Travel Policy & Expense Schedule 2026\n\n## 1. Overview\nEffective July 23, 2026, the company has updated its global travel and expense guidelines to reflect current economic conditions. This document serves as the active baseline for all corporate travel, client entertainment, and daily al"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "Q07",
+      "query": "Is there currently a hiring freeze?",
+      "category": "CURRENT_STATE",
+      "expected_behavior": "Should determine that the 2023 hiring freeze was lifted in February 2024. The answer should state NO, there is no current hiring freeze. The Skeptic should flag the 2023 freeze notice as superseded by the 2024 resumption notice.",
+      "expected_facts": [
+        "No current hiring freeze",
+        "Freeze was lifted in February 2024",
+        "Normal recruitment has resumed",
+        "New requisitions need Director-level approval"
+      ],
+      "status": "SUCCESS",
+      "error": null,
+      "execution_time_seconds": 15.64,
+      "pipeline_output": {
+        "final_answer": "According to the latest information, there is no current hiring freeze. The company-wide hiring freeze initiated in July 2023 was officially lifted on February 1, 2024, as stated in [LOCAL-hiring_resume_2024.md - 2024-02-01]. This document supersedes any older hiring policy, including the one found in the invalidated [LOCAL-hiring_freeze_2023.md], due to its newer effective date (2024-02-01). \n\nAs of February 1, 2024, all departments may resume normal recruitment activity, with new requisitions requiring Director-level approval, as outlined in [LOCAL-hiring_resume_2024.md - 2024-02-01].",
+        "router": {
+          "intent_type": "current",
+          "target_year": null,
+          "reasoning": "The user is asking about the current state of hiring, with no specific time period mentioned."
+        },
+        "conflict_report": {
+          "has_conflicts": true,
+          "conflicts": [
+            {
+              "invalidated_doc_id": "LOCAL-hiring_freeze_2023.md",
+              "valid_doc_id": "LOCAL-hiring_resume_2024.md",
+              "conflict_reason": "newer effective date (2024-02-01 supersedes 2023-07-01) on hiring policy"
+            }
+          ],
+          "surviving_doc_ids": [
+            "LOCAL-hiring_resume_2024.md",
+            "LOCAL-salary_bands_2023.md",
+            "LOCAL-data_retention_2021.md",
+            "TLAMA-260"
+          ],
+          "confidence_score": 0.9
+        },
+        "retrieved_chunks": [
+          {
+            "id": "LOCAL-hiring_resume_2024.md",
+            "effective_date": "2024-02-01",
+            "doc_type": "unstructured_text",
+            "title": "Hiring Resumed – Q1 2024",
+            "content_preview": "# Hiring Freeze Lifted – February 2024\n\nEffective February 1, 2024, the company-wide hiring freeze initiated in July 2023 has been officially lifted. All departments may resume normal recruitment activity.\n\nNew requisitions require Director-level approval. A revised headcount plan has been distribut"
+          },
+          {
+            "id": "LOCAL-hiring_freeze_2023.md",
+            "effective_date": "2023-07-01",
+            "doc_type": "unstructured_text",
+            "title": "Hiring Freeze Notice Q3 2023",
+            "content_preview": "# Company-Wide Hiring Freeze – Q3 2023\n\nEffective July 1, 2023, the company has implemented a company-wide hiring freeze across all departments. No new requisitions will be approved until further notice. All open positions that have not received signed offer letters are to be placed on hold.\n\nIntern"
+          },
+          {
+            "id": "LOCAL-data_retention_2021.md",
+            "effective_date": "2021-06-01",
+            "doc_type": "unstructured_text",
+            "title": "Data Retention Policy 2021",
+            "content_preview": "# Data Retention & Privacy Policy – June 2021\n\nThe company retains all customer data for a minimum of 7 years in compliance with SOX requirements. Personal data may be stored indefinitely unless a customer requests deletion under CCPA.\n\nBackup archives are maintained on-premises in the company's pri"
+          },
+          {
+            "id": "TLAMA-260",
+            "effective_date": "2015-01-01",
+            "doc_type": "structured_table",
+            "title": "TempLAMA-Javier Hernández pla",
+            "content_preview": "# Active Schedule Table (2015)\n| Query Focus | Verified Decision | Status |\n| Javier Hernández plays for _X_. | **[{'wikidata_id': 'Q8682', 'name': ['Real Madrid C.F.', 'Real Madrid CF', 'Real Madrid Club of Football', 'Royal Madrid Football Club', 'Real Madrid', 'RMCF', 'Madrid FC', 'Real Football "
+          },
+          {
+            "id": "LOCAL-salary_bands_2023.md",
+            "effective_date": "2023-04-01",
+            "doc_type": "unstructured_text",
+            "title": "Salary Bands 2023",
+            "content_preview": "# Annual Compensation Review – 2023\n\nAs of April 2023, the company has standardized salary bands across all departments. The base salary for entry-level software engineers is $85,000 per year. Mid-level engineers earn between $110,000 and $130,000. Senior engineers are compensated in the range of $1"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "Q08",
+      "query": "What is the performance review rating scale used by the company?",
+      "category": "SINGLE_DOC_RETRIEVAL",
+      "expected_behavior": "Should retrieve the 2024 performance review policy accurately. No temporal conflict expected since there's only one version. Tests baseline retrieval accuracy.",
+      "expected_facts": [
+        "5-point scale",
+        "Exceeds Expectations, Meets Expectations, Developing, Below Expectations, Unsatisfactory",
+        "Annual review in December",
+        "PIP for two consecutive Below Expectations ratings"
+      ],
+      "status": "SUCCESS",
+      "error": null,
+      "execution_time_seconds": 17.03,
+      "pipeline_output": {
+        "final_answer": "The current performance review rating scale used by the company is a 5-point scale, which includes the following ratings: Exceeds Expectations, Meets Expectations, Developing, Below Expectations, and Unsatisfactory. This information is based on the document [LOCAL-performance_review_2024.md](LOCAL-performance_review_2024.md) with an effective date of 2024-01-01. \n\nNote that the provided documents do not mention any updates to the performance review rating scale since 2024. The other documents, [LOCAL-travel_policy_2026.md](LOCAL-travel_policy_2026.md) and [LOCAL-salary_bands_2026.md](LOCAL-salary_bands_2026.md), do not pertain to the performance review process and therefore do not supersede the information provided in [LOCAL-performance_review_2024.md](LOCAL-performance_review_2024.md).",
+        "router": {
+          "intent_type": "current",
+          "target_year": null,
+          "reasoning": "The query does not specify a time period, implying the user is asking about the current state of the performance review rating scale."
+        },
+        "conflict_report": {
+          "has_conflicts": true,
+          "conflicts": [
+            {
+              "invalidated_doc_id": "LOCAL-salary_bands_2023.md",
+              "valid_doc_id": "LOCAL-salary_bands_2026.md",
+              "conflict_reason": "Newer effective date (2026-01-15) supersedes older salary bands"
+            }
+          ],
+          "surviving_doc_ids": [
+            "LOCAL-salary_bands_2026.md",
+            "LOCAL-travel_policy_2026.md",
+            "LOCAL-performance_review_2024.md"
+          ],
+          "confidence_score": 0.8
+        },
+        "retrieved_chunks": [
+          {
+            "id": "LOCAL-performance_review_2024.md",
+            "effective_date": "2024-01-01",
+            "doc_type": "unstructured_text",
+            "title": "Performance Review Cycle 2024",
+            "content_preview": "# Annual Performance Review Process – 2024\n\nAll employees are subject to annual performance reviews conducted in December of each year. The review cycle consists of a self-assessment, a manager assessment, and a calibration session at the department level.\n\nPerformance ratings use a 5-point scale: E"
+          },
+          {
+            "id": "LOCAL-travel_policy_2026.md",
+            "effective_date": "2026-07-23",
+            "doc_type": "structured_table",
+            "title": "Travel Policy 2026",
+            "content_preview": "# Corporate Travel Policy & Expense Schedule 2026\n\n## 1. Overview\nEffective July 23, 2026, the company has updated its global travel and expense guidelines to reflect current economic conditions. This document serves as the active baseline for all corporate travel, client entertainment, and daily al"
+          },
+          {
+            "id": "LOCAL-salary_bands_2026.md",
+            "effective_date": "2026-01-15",
+            "doc_type": "structured_table",
+            "title": "Salary Bands 2026 Revision",
+            "content_preview": "# Compensation Framework – 2026 Revision\n\nThis document supersedes the April 2023 compensation review.\n\n## Engineering Salary Bands (Effective January 15, 2026)\n\n| Level | Title | Base Salary Range | Annual Bonus | RSU Grant |\n| :--- | :--- | :--- | :--- | :--- |\n| L3 | Entry Engineer | $105,000 – $"
+          },
+          {
+            "id": "LOCAL-salary_bands_2023.md",
+            "effective_date": "2023-04-01",
+            "doc_type": "unstructured_text",
+            "title": "Salary Bands 2023",
+            "content_preview": "# Annual Compensation Review – 2023\n\nAs of April 2023, the company has standardized salary bands across all departments. The base salary for entry-level software engineers is $85,000 per year. Mid-level engineers earn between $110,000 and $130,000. Senior engineers are compensated in the range of $1"
+          },
+          {
+            "id": "LOCAL-remote_work_policy_2022.md",
+            "effective_date": "2022-03-15",
+            "doc_type": "unstructured_text",
+            "title": "Remote Work Policy 2022",
+            "content_preview": "# Remote Work Guidelines – March 2022\n\nEffective March 15, 2022, the company permits all full-time employees to work remotely up to 2 days per week. Employees must be physically present at the office for at least 3 days per week.\n\nRemote work requests must be approved by the direct manager at least "
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "Q09",
+      "query": "What was the lodging reimbursement limit in 2022 and what is it now?",
+      "category": "TIMELINE_EVOLUTION",
+      "expected_behavior": "Router should classify as 'timeline'. Should compare: 2022 was $200/night (flat), 2026 is $250 standard / $350 major city (tiered). Should show the evolution clearly.",
+      "expected_facts": [
+        "2022: $200/night flat limit",
+        "2026: $250 standard, $350 major city",
+        "Tier-based system replaced flat rate",
+        "Both time periods addressed"
+      ],
+      "status": "SUCCESS",
+      "error": null,
+      "execution_time_seconds": 19.3,
+      "pipeline_output": {
+        "final_answer": "To understand the evolution of the lodging reimbursement limit, let's examine the relevant documents in chronological order.\n\n1. **Initial Policy (2022)**: According to the `LOCAL-travel_memo_2022.md` document, effective May 1, 2022, the lodging reimbursement limit was $200 per night.\n\n2. **Update and Current Policy (2026)**: The `LOCAL-travel_policy_2026.md` document, effective July 23, 2026, introduces a tier-based schedule for lodging reimbursement. It explicitly supersedes all previous travel memorandums, including the 2022 guidelines. The new limits are:\n   - $250.00 per night for standard lodging, and\n   - $350.00 per night for lodging in major cities.\n\n**Key Changes**:\n- The lodging reimbursement has increased from a flat $200 per night to tiered rates of $250 for standard lodging and $350 for major cities.\n- The introduction of a tiered system allows for differentiation in reimbursement based on the location, acknowledging the varying costs of lodging in different areas.\n\nIn summary, the lodging reimbursement limit has been adjusted to reflect a more nuanced approach to accommodating travel expenses in different locations, with an overall increase in the maximum reimbursement amounts.",
+        "router": {
+          "intent_type": "timeline",
+          "target_year": "2022",
+          "reasoning": "The user is comparing the past state of lodging reimbursement limit in 2022 with its current state."
+        },
+        "conflict_report": {
+          "has_conflicts": true,
+          "conflicts": [
+            {
+              "invalidated_doc_id": "LOCAL-travel_memo_2022.md",
+              "valid_doc_id": "LOCAL-travel_policy_2026.md",
+              "conflict_reason": "Newer effective date and explicit supersession statement in LOCAL-travel_policy_2026.md"
+            }
+          ],
+          "surviving_doc_ids": [
+            "LOCAL-remote_work_policy_2025.md",
+            "LOCAL-salary_bands_2023.md",
+            "LOCAL-travel_policy_2026.md",
+            "LOCAL-travel_memo_2022.md",
+            "LOCAL-hiring_freeze_2023.md"
+          ],
+          "confidence_score": 0.9
+        },
+        "retrieved_chunks": [
+          {
+            "id": "LOCAL-travel_policy_2026.md",
+            "effective_date": "2026-07-23",
+            "doc_type": "structured_table",
+            "title": "Travel Policy 2026",
+            "content_preview": "# Corporate Travel Policy & Expense Schedule 2026\n\n## 1. Overview\nEffective July 23, 2026, the company has updated its global travel and expense guidelines to reflect current economic conditions. This document serves as the active baseline for all corporate travel, client entertainment, and daily al"
+          },
+          {
+            "id": "LOCAL-travel_memo_2022.md",
+            "effective_date": "2022-05-01",
+            "doc_type": "unstructured_text",
+            "title": "Travel Expense Guidelines 2022",
+            "content_preview": "# Travel and Expense Guidelines – May 2022\n\nAll business travel must be approved by the department head at least two weeks in advance. The daily meal allowance is capped at $50 per day regardless of destination. Lodging reimbursement is limited to $200 per night.\n\nAll flights must be booked in Econo"
+          },
+          {
+            "id": "LOCAL-salary_bands_2023.md",
+            "effective_date": "2023-04-01",
+            "doc_type": "unstructured_text",
+            "title": "Salary Bands 2023",
+            "content_preview": "# Annual Compensation Review – 2023\n\nAs of April 2023, the company has standardized salary bands across all departments. The base salary for entry-level software engineers is $85,000 per year. Mid-level engineers earn between $110,000 and $130,000. Senior engineers are compensated in the range of $1"
+          },
+          {
+            "id": "LOCAL-hiring_freeze_2023.md",
+            "effective_date": "2023-07-01",
+            "doc_type": "unstructured_text",
+            "title": "Hiring Freeze Notice Q3 2023",
+            "content_preview": "# Company-Wide Hiring Freeze – Q3 2023\n\nEffective July 1, 2023, the company has implemented a company-wide hiring freeze across all departments. No new requisitions will be approved until further notice. All open positions that have not received signed offer letters are to be placed on hold.\n\nIntern"
+          },
+          {
+            "id": "LOCAL-remote_work_policy_2025.md",
+            "effective_date": "2025-01-10",
+            "doc_type": "structured_table",
+            "title": "Remote Work Policy 2025 Update",
+            "content_preview": "# Remote Work Policy – January 2025 Update\n\nThis policy supersedes the March 2022 Remote Work Guidelines effective immediately.\n\n## Updated Remote Work Schedule\n\n| Employee Tier | Remote Days Per Week | Equipment Stipend | Approval Required |\n| :--- | :--- | :--- | :--- |\n| Junior (0-2 yrs) | 3 days"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "Q10",
+      "query": "Is cloud storage allowed for customer data?",
+      "category": "CROSS_MODAL_CONFLICT",
+      "expected_behavior": "Should return YES from the 2025 policy (cloud with AES-256), NOT 'No cloud storage permitted' from the 2021 policy. The Skeptic should detect the direct contradiction between 2021 (cloud prohibited) and 2025 (cloud permitted with encryption).",
+      "expected_facts": [
+        "Cloud storage IS now permitted",
+        "AES-256 encryption is mandatory",
+        "2021 prohibition of cloud storage is superseded",
+        "Effective May 2025"
+      ],
+      "status": "ERROR",
+      "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01ky6xnrw8fqxr5sh5fnjph25r` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99357, Requested 1274. Please try again in 9m5.183999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+      "execution_time_seconds": 10.86,
+      "pipeline_output": null
+    }
+  ]
+}
